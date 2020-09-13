@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:focusableInTouchMode="true"
+    android:clickable="true"
+    android:focusable="true"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="iitg.vedinkaksa.StudentQueryActivity">
+
+    <!--
+        Authors - Arjun Nag & Kaushik Kumar Barman
+        Date Created - 7 July 2017
+        Layout purpose - WebView where Students can view the pdf (in image format) and also view, ask and like queries
+        Input - Queries, Selection of Like button in coressponding questions
+        Output - Queries and Number of Likes Updated in the database
+    -->
+
+
+    <iitg.vedinkaksa.EditText1
+        android:id="@+id/etq"
+        android:layout_marginTop="60dp"
+        android:hint="Enter your query here"
+        android:layout_centerHorizontal="true"
+        android:layout_width="180dp"
+        android:lines="2"
+        android:layout_height="wrap_content" />
+
+    <Button
+        android:id="@+id/post"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/etq"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="9sp"
+        android:background="#3f93ed"
+        android:text="Post/Refresh"
+        android:textColor="#ffffff"
+        tools:layout_editor_absoluteX="148dp"
+        tools:layout_editor_absoluteY="128dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/post"
+        android:layout_marginRight="3dp"
+        android:layout_marginLeft="3dp"
+        android:layout_marginBottom="3dp"
+        android:layout_marginTop="3dp"
+        android:id="@+id/sclinear">
+        <ListView
+            android:id="@+id/lvs"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        </ListView>
+
+    </LinearLayout>
+
+
+
+
+
+
+</RelativeLayout>

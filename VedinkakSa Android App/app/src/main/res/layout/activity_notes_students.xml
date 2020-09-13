@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:focusableInTouchMode="true"
+    android:clickable="true"
+    android:focusable="true"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".NotesActivityStudents">
+
+    <Button
+        android:layout_marginTop="80sp"
+        android:layout_marginBottom="10sp"
+        android:id="@+id/previousnotes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|center_horizontal|center"
+
+        android:text="previous notes"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="136dp"
+        tools:layout_editor_absoluteY="113dp" />
+
+    <Button
+        android:id="@+id/newnote"
+        android:onClick="newNotes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="MAke new note"
+        tools:ignore="MissingConstraints"
+        android:layout_gravity="bottom|center_horizontal|center"
+        tools:layout_editor_absoluteX="132dp"
+        tools:layout_editor_absoluteY="185dp" />
+</LinearLayout>

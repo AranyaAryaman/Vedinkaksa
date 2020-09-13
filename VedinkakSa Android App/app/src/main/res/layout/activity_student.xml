@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+DISCLAIMER: Any Part or segment of the comments presented as documentation cannot be modified or removed without the proper permission from the current author. If any of the documentation in the public domain is found without proper credits and permission of the author, it will be dealt as plagiarism of the original code. However, part of the codes can be customized and used as per needs without any permission for personal use.
+
+Author: Shashank Kotyan
+Contact details: shashank15100@iiitnr.edu.in; shashankkotyan@gmail.com
+Developed for: Affective Computing Team, IIT-Guwahati for development of vedinkakSa, a sensitive classroom application.
+
+-->
+<!-- Constraint Layout as Base Layout -->
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:focusableInTouchMode="true"
+    android:clickable="true"
+    android:focusable="true"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="iitg.vedinkaksa.StudentActivity">
+    <!-- Linear Layout holding all the children -->
+<!--    <FrameLayout-->
+<!--        android:layout_width="match_parent" android:layout_height="match_parent">-->
+<!--        <fragment class="iitg.vedinkaksa.GetEvents"-->
+<!--            android:id="@+id/titles" android:layout_weight="1"-->
+<!--            android:layout_width="match_parent" android:layout_height="match_parent"-->
+<!--            tools:ignore="MissingConstraints" />-->
+<!--    </FrameLayout>-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:layout_editor_absoluteY="70dp"
+        tools:ignore="MissingConstraints">
+        <!-- Linear Layout holding Login Information and Logout option-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="1dp"
+            android:orientation="horizontal">
+            <TextView
+                android:background="@color/colorPrimary"
+                android:id="@+id/username"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="20dp"
+                android:textColor="@color/white"
+                android:text="@string/logged" />
+            <Space
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+            <Button
+                android:id="@+id/logout"
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                android:background="@drawable/logout"
+                android:onClick="logout" />
+        </LinearLayout>
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteX="0dp"
+            tools:layout_editor_absoluteY="32dp">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <!-- Relative Layout holding the option of Classroom -->
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    >
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="110dp"
+                        android:background="@drawable/classroombackground"
+                        android:contentDescription="@string/classroom"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/classroom" />
+
+                    <Button
+                        android:id="@+id/studentclassroom"
+                        android:layout_width="368dp"
+                        android:layout_height="93dp"
+                        android:layout_centerInParent="true"
+                        android:background="@android:color/transparent"
+                        android:fontFamily="sans-serif"
+                        android:gravity="center_vertical"
+                        android:onClick="studentclassroom"
+                        android:text="@string/classroom"
+                        android:textAlignment="center"
+                        android:textColor="#ffffff"
+                        android:textSize="30sp"
+                        android:textStyle="bold"
+                        android:verticalScrollbarPosition="left" />
+                </RelativeLayout>
+
+                <!-- Relative Layout holding the option of Examinations -->
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:onClick="studentexamintion">
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="110dp"
+                        android:background="@drawable/classroombackground"
+                        android:contentDescription="@string/examintions"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/examinations" />
+
+                    <Button
+                        android:id="@+id/studentexamination"
+                        android:layout_width="385dp"
+                        android:layout_height="91dp"
+                        android:layout_centerInParent="true"
+                        android:background="@android:color/transparent"
+                        android:gravity="center_vertical"
+                        android:onClick="studentexamintion"
+                        android:text="@string/Quiz"
+                        android:textAlignment="center"
+                        android:textColor="#ffffff"
+                        android:textSize="30sp"
+                        android:textStyle="bold" />
+                </RelativeLayout>
+                <!-- Relative Layout holding the option of Poll -->
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:onClick="classnotes">
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="110dp"
+                        android:background="@drawable/classroombackground"
+                        android:contentDescription="@string/poll"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/poll" />
+
+                    <Button
+                        android:id="@+id/classnotes"
+                        android:layout_width="383dp"
+                        android:layout_height="85dp"
+                        android:layout_centerInParent="true"
+                        android:background="@android:color/transparent"
+                        android:gravity="center_vertical"
+                        android:text="CLASSNOTES"
+                        android:onClick="classnotes"
+                        android:textAlignment="center"
+                        android:textColor="#ffffff"
+                        android:textSize="30sp"
+                        android:textStyle="bold" />
+                </RelativeLayout>
+                <!-- Relative Layout holding the option of Attendance -->
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:onClick="studentattendance">
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="110dp"
+                        android:background="@drawable/classroombackground"
+                        android:contentDescription="@string/attendance"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/get_attendance" />
+
+                    <Button
+                        android:onClick="studentattendance"
+                        android:id="@+id/studentattendance"
+                        android:layout_width="356dp"
+                        android:layout_height="88dp"
+                        android:layout_centerInParent="true"
+                        android:background="@android:color/transparent"
+                        android:gravity="center_vertical"
+                        android:text="@string/attendance"
+                        android:textAlignment="center"
+                        android:textColor="#ffffff"
+                        android:textSize="30sp"
+                        android:textStyle="bold" />
+                </RelativeLayout>
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

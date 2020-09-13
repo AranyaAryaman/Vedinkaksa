@@ -1,0 +1,273 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+DISCLAIMER: Any Part or segment of the comments presented as documentation cannot be modified or removed without the proper permission from the current author. If any of the documentation in the public domain is found without proper credits and permission of the author, it will be dealt as plagiarism of the original code. However, part of the codes can be customized and used as per needs without any permission for personal use.
+
+Author: Shashank Kotyan
+Contact details: shashank15100@iiitnr.edu.in; shashankkotyan@gmail.com
+Developed for: Affective Computing Team, IIT-Guwahati for development of vedinkakSa, a sensitive classroom application.
+
+-->
+<!-- Constraint Layout as Base Layout -->
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:focusableInTouchMode="true"
+    android:clickable="true"
+    android:focusable="true"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="iitg.vedinkaksa.TeacherActivity">
+    <!-- Linear Layout holding all the children -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:orientation="vertical"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="64dp">
+        <!-- Linear Layout holding Login Information and Logout option-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#134F9C"
+                android:padding="20dp"
+                android:text="@string/logged_teacher"
+                android:textColor="#ffffff" />
+
+            <Space
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
+            <Button
+                android:id="@+id/logout"
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                android:background="@drawable/logout"
+                android:onClick="logout" />
+
+        </LinearLayout>
+        <!-- Scrollview for the options available to the teachers. -->
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <!-- Relative Layout holding the option of Classroom -->
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="110dp"
+                        android:background="@drawable/classroombackground"
+                        android:contentDescription="@string/classroom"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/classroom" />
+
+                    <Button
+                        android:id="@+id/teacherclassroom"
+                        android:layout_width="354dp"
+                        android:layout_height="95dp"
+                        android:layout_centerInParent="true"
+                        android:background="@android:color/transparent"
+                        android:gravity="center_vertical"
+                        android:onClick="teacherclassroom"
+                        android:text="@string/classroom"
+                        android:textAlignment="center"
+                        android:textColor="#ffffff"
+                        android:textSize="30sp"
+                        android:textStyle="bold" />
+
+                </RelativeLayout>
+
+
+                <!-- Relative Layout holding the option of Attendence -->
+
+                <!-- Relative Layout holding the option of Examinations -->
+                <RelativeLayout
+                    android:onClick="teacherexaminations"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="110dp"
+                        android:background="@drawable/classroombackground"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/examinations" />
+
+                    <Button
+                        android:id="@+id/teacherexaminations"
+                        android:layout_width="385dp"
+                        android:layout_height="93dp"
+                        android:layout_centerInParent="true"
+                        android:background="@android:color/transparent"
+                        android:gravity="center_vertical"
+                        android:onClick="teacherexaminations"
+                        android:text="@string/examintions"
+                        android:textAlignment="center"
+                        android:textColor="#ffffff"
+                        android:textSize="30sp"
+                        android:textStyle="bold" />
+
+
+                    <!--For Visualisation (Button Only) -->
+                </RelativeLayout>
+
+                <Button
+
+                    android:id="@+id/visb"
+                    android:layout_width="match_parent"
+                    android:layout_height="110dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="6dp"
+                    android:layout_marginTop="12dp"
+                    android:background="#00fdc0"
+                    android:layout_marginEnd="6dp"
+                    android:gravity="center_vertical"
+                    android:text="VISUALISATION"
+                    android:textAlignment="center"
+                    android:textColor="#ffffff"
+                    android:textSize="30sp"
+                    android:textStyle="bold" />
+                <!-- Relative Layout holding the option of Poll -->
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="110dp"
+                        android:layout_marginTop="-2dp"
+                        android:contentDescription="@string/get_attendance"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/get_attendance" />
+
+                    <Button
+
+                        android:id="@+id/teachergetattendance"
+                        android:layout_width="398dp"
+                        android:layout_height="106dp"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="6dp"
+                        android:background="@android:color/transparent"
+                        android:gravity="center_vertical"
+                        android:onClick="teachergetattendance"
+                        android:text="@string/get_attendance"
+                        android:textAlignment="center"
+                        android:textColor="#ffffff"
+                        android:textSize="30sp"
+                        android:textStyle="bold" />
+
+                </RelativeLayout>
+                <!-- Relative Layout holding the option of Result -->
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="110dp"
+                        android:background="@drawable/classroombackground"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/result" />
+
+                    <Button
+                        android:id="@+id/teachergetresult"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_centerVertical="true"
+                        android:background="@android:color/transparent"
+                        android:gravity="center_vertical"
+                        android:onClick="teachergetresult"
+                        android:text="@string/get_result"
+                        android:textAlignment="center"
+                        android:textColor="#ffffff"
+                        android:textSize="30sp"
+                        android:textStyle="bold" />
+
+                </RelativeLayout>
+                <!-- Relative Layout holding the option of Teacher Activities -->
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="110dp"
+                        android:background="@drawable/classroombackground"
+                        android:contentDescription="TODO"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/my_activity" />
+
+                    <Button
+                        android:id="@+id/teachermyactivites"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_centerVertical="true"
+                        android:background="@android:color/transparent"
+                        android:gravity="center_vertical"
+                        android:onClick="teachermyactivites"
+                        android:text="@string/my_activities"
+                        android:textAlignment="center"
+                        android:textColor="#ffffff"
+                        android:textSize="30sp"
+                        android:textStyle="bold" />
+
+                </RelativeLayout>
+                <!-- Relative Layout holding the option of Student Activities -->
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="20dp"
+                    android:layout_marginTop="15dp">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="110dp"
+                        android:background="@drawable/classroombackground"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/my_activity" />
+
+                    <Button
+                        android:id="@+id/teacherstudentactivites"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_centerVertical="true"
+                        android:background="@android:color/transparent"
+                        android:gravity="center_vertical"
+                        android:onClick="teacherstudentactivites"
+                        android:text="@string/student_activities"
+                        android:textAlignment="center"
+                        android:textColor="#ffffff"
+                        android:textSize="30sp"
+                        android:textStyle="bold" />
+
+                </RelativeLayout>
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+</RelativeLayout>

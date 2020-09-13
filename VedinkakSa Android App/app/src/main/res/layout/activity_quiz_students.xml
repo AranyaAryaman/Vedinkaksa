@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:focusableInTouchMode="true"
+    android:clickable="true"
+    android:focusable="true"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".QuizStudents">
+
+<TextView
+    android:paddingStart="15sp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/colorPrimary"
+    android:text="QUIZ"
+    android:textColor="@color/white"
+    android:textSize="35sp"
+   />
+
+<TextView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:text="@string/question"
+    android:id="@+id/quiz_question"
+    android:layout_alignParentTop="true"
+    android:layout_margin="10dp"
+    android:padding="10dp"
+    android:textSize="20sp"
+    android:textColor="#000000" />
+
+<RadioGroup
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="10dp"
+    android:padding="10dp"
+    android:id="@+id/radioGroup">
+    <RadioButton
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:id="@+id/radio0"
+        android:textSize="15sp"
+        android:textColor="#000000"
+        android:text="@string/options"
+        android:layout_margin="10dp"
+        android:padding="10dp"
+        android:button="@drawable/radio_bg"/>
+
+    <RadioButton
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:id="@+id/radio1"
+        android:textSize="15sp"
+        android:textColor="@color/black"
+        android:text="@string/options"
+        android:layout_margin="10dp"
+        android:padding="10dp"
+        android:button="@drawable/radio_bg"/>
+
+    <RadioButton
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:id="@+id/radio2"
+        android:textSize="15sp"
+        android:textColor="@color/black"
+        android:text="@string/options"
+        android:layout_margin="10dp"
+        android:padding="10dp"
+        android:button="@drawable/radio_bg"/>
+
+    <RadioButton
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:id="@+id/radio3"
+        android:textSize="15sp"
+        android:textColor="@color/black"
+        android:text="@string/options"
+        android:layout_margin="10dp"
+        android:padding="10dp"
+        android:button="@drawable/radio_bg"/>
+
+</RadioGroup>
+
+<Button
+    android:layout_height="wrap_content"
+    android:layout_width="match_parent"
+    android:onClick="nextQuestionFunction"
+    android:gravity="center"
+    android:id="@+id/nextquiz"
+    android:textColor="@color/white"
+    android:text="@string/next_questions"
+    android:background="@drawable/quizbutton"
+    android:layout_margin="10dp"
+    android:padding="10dp"/>
+
+<Button
+    android:layout_height="wrap_content"
+    android:layout_width="match_parent"
+    android:onClick="prevQuestionFunction"
+    android:gravity="center"
+    android:id="@+id/previousquiz"
+    android:textColor="@color/white"
+    android:text="@string/previous_questions"
+    android:background="@drawable/quizbutton"
+    android:padding="10dp"
+    android:layout_margin="10dp"/>
+
+<TextView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:textSize="35sp"
+    android:gravity="center|bottom"
+    android:id="@+id/score"
+    />
+
+
+</LinearLayout>

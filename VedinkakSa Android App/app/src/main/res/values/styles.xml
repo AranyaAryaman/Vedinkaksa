@@ -1,0 +1,23 @@
+<!--
+DISCLAIMER: Any Part or segment of the comments presented as documentation cannot be modified or removed without the proper permission from the current author. If any of the documentation in the public domain is found without proper credits and permission of the author, it will be dealt as plagiarism of the original code. However, part of the codes can be customized and used as per needs without any permission for personal use.
+
+Author: Shashank Kotyan
+Contact details: shashank15100@iiitnr.edu.in; shashankkotyan@gmail.com
+Developed for: Affective Computing Team, IIT-Guwahati for development of vedinkakSa, a sensitive classroom application.
+
+-->
+<resources>
+    <!-- Theme and Color Settings for the application -->
+    <style name="AppTheme" parent="Theme.AppCompat.DayNight.DarkActionBar">
+        <!-- Primary Color -->
+        <item name="colorPrimary">#757efd</item>
+        <!-- Dark Primary Color -->
+        <item name="colorPrimaryDark">#0022ff</item>
+        <!-- Accent Color -->
+        <item name="colorAccent">#FFC107</item>
+    </style>
+
+    <style name="mytheme" parent="Theme.AppCompat.Light.Dialog">
+        <!--<item name="windowNoTitle">true</item>-->
+    </style>
+</resources>

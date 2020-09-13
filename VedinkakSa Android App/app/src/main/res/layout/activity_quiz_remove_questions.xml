@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:id="@+id/something"
+    tools:context=".QuizRemoveQuestions">
+
+    <TextView
+        android:paddingStart="15dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        android:text="QUIZ"
+        android:textColor="@color/white"
+        android:textSize="35sp"
+        />
+
+    <TextView
+        android:paddingStart="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="please click on the question to remove it"
+        android:textColor="@color/black"
+        android:textSize="15sp"
+        />
+
+
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/list">
+
+
+    </ListView>
+
+</LinearLayout>

@@ -1,0 +1,12 @@
+c,c,lc,n,n,lc,c,n
+lc,n,c,lc,c,n,lc,lc
+n,lc,n,c,c,n,c,c
+lc,n,n,n,n,lc,n,n
+n,lc,n,n,n,c,n,n
+n,c,c,lc,c,n,n,lc
+lc,n,lc,n,lc,n,lc,n
+c,lc,n,n,n,n,c,c
+n,n,c,c,n,n,n,n
+c,c,n,lc,n,lc,c,c
+lc,n,n,n,c,n,n,n
+n,n,lc,n,lc,n,lc,lc

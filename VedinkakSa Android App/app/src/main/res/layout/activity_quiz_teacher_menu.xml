@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".QuizTeacherMenu">
+
+
+    <TextView
+        android:paddingStart="15sp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        android:text="QUIZ"
+        android:textColor="@color/white"
+        android:textSize="35sp"
+        />
+
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="View Quiz"
+        android:background="@drawable/quizbutton"
+        android:layout_margin="10dp"
+        android:padding="10dp"
+        android:onClick="viewQuiz"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Add Question"
+        android:background="@drawable/quizbutton"
+        android:layout_margin="10dp"
+        android:padding="10dp"
+        android:onClick="addQuestion"/>
+
+
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="New Quiz"
+        android:background="@drawable/quizbutton"
+        android:layout_margin="10dp"
+        android:padding="10dp"
+        android:onClick="newQuiz"/>
+
+
+</LinearLayout>

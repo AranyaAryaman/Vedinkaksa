@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:focusableInTouchMode="true"
+    android:clickable="true"
+    android:focusable="true"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".PdfViewer"
+    android:orientation="vertical">
+
+    <com.github.barteksc.pdfviewer.PDFView
+        android:id="@+id/PdfView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="2">
+
+    </com.github.barteksc.pdfviewer.PDFView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="3"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/askQuestion"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="askQuestion"
+            android:text="Ask a Question" />
+
+        <ExpandableListView
+            android:id="@+id/ExpandableQueryView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:divider="@android:color/darker_gray"
+            android:dividerHeight="0.5dp"
+            android:indicatorLeft="?android:attr/expandableListPreferredItemIndicatorLeft">
+
+        </ExpandableListView>
+    </LinearLayout>
+
+    <!--<ListView-->
+        <!--android:id="@+id/queries"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent"-->
+        <!--android:layout_weight="2" />-->
+
+</LinearLayout>

@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+DISCLAIMER: Any Part or segment of the comments presented as documentation cannot be modified or removed without the proper permission from the current author. If any of the documentation in the public domain is found without proper credits and permission of the author, it will be dealt as plagiarism of the original code. However, part of the codes can be customized and used as per needs without any permission for personal use.
+
+Author: Shashank Kotyan
+Contact details: shashank15100@iiitnr.edu.in; shashankkotyan@gmail.com
+Developed for: Affective Computing Team, IIT-Guwahati for development of vedinkakSa, a sensitive classroom application.
+
+-->
+<!-- Constraint Layout as Base Layout -->
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:focusableInTouchMode="true"
+    android:clickable="true"
+    android:focusable="true"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="iitg.vedinkaksa.TeacherClassroom">
+    <!--Frame Layout holding all children -->
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:theme="@style/AppTheme"
+        tools:context=".TeacherClassroom"
+        tools:layout_editor_absoluteY="70dp"
+        tools:ignore="MissingConstraints">
+        <!-- Linear Layout holding options for PDF (Generating/Opening) -->
+        <LinearLayout
+            android:id="@+id/options_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="20dp">
+            <Button
+                android:id="@+id/read_pdf"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical|center_horizontal|center"
+                android:background="@android:color/transparent"
+                android:drawableTop="@drawable/open"
+                android:text="@string/open_pdf" />
+            <Button
+                android:id="@+id/create_new_pdf"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical|center_horizontal"
+                android:layout_marginTop="20dp"
+                android:background="@android:color/transparent"
+                android:drawableTop="@drawable/create"
+                android:text="@string/generate_new_pdf" />
+
+            <Button
+                android:id="@+id/upload_new_pdf"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical|center_horizontal"
+                android:layout_marginTop="20dp"
+                android:background="@android:color/transparent"
+                android:drawableTop="@drawable/create"
+                android:text="upload new pdf" />
+        </LinearLayout>
+        <!-- Linear Layout holding slides -->
+        <LinearLayout
+            android:id="@+id/read_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:visibility="invisible"
+            android:weightSum="3">
+            <!-- Linear Layout holding slides -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="2"
+                android:orientation="vertical">
+                <com.github.barteksc.pdfviewer.PDFView
+                    android:id="@+id/pdfView1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"/>
+                <ImageView
+                    android:id="@+id/pdfView"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:background="@android:color/white"
+                    android:scaleType="fitCenter"
+                    android:visibility="invisible"
+                    tools:ignore="NestedWeights" />
+                <!-- Linear Layout holding options previous and next-->
+                <LinearLayout
+                    style="?android:attr/buttonBarStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:measureWithLargestChild="true"
+                    android:orientation="horizontal">
+                    <Button
+                        android:id="@+id/previous"
+                        style="?android:attr/buttonBarButtonStyle"
+                        android:layout_width="75dp"
+                        android:layout_height="75dp"
+                        android:background="@drawable/previous" />
+                    <Space
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1" />
+                    <Button
+                        android:id="@+id/next"
+                        style="?android:attr/buttonBarButtonStyle"
+                        android:layout_width="75dp"
+                        android:layout_height="75dp"
+                        android:background="@drawable/next" />
+                </LinearLayout>
+            </LinearLayout>
+            <!-- Linear Layout showing list of PDFs -->
+            <LinearLayout
+                android:id="@+id/hello"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:orientation="vertical">
+                <ScrollView
+                    android:id="@+id/sv"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent">
+                    <LinearLayout
+                        android:id="@+id/svl"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+                    </LinearLayout>
+                </ScrollView>
+            </LinearLayout>
+        </LinearLayout>
+        <!-- Linear Layout holding lists -->
+        <LinearLayout
+            android:id="@+id/pdf_selection_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="10dp"
+            android:visibility="invisible">
+            <ListView
+                android:id="@+id/pdfList"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content">
+            </ListView>
+        </LinearLayout>
+        <!-- Linear Layout holding options generating PDFs-->
+        <LinearLayout
+            android:id="@+id/write_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="10dp"
+            android:visibility="invisible">
+
+            <EditText
+                android:id="@+id/pdf_content"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:gravity="top"
+                android:hint="@string/enter_content"
+                android:lineSpacingExtra="4dp"
+                android:lines="10" />
+            <Button
+                android:id="@+id/generate_pdf"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom|center_horizontal|center"
+                android:background="@android:color/transparent"
+                android:drawableStart="@drawable/create"
+                android:gravity="center_vertical|center_horizontal|center"
+                android:text="@string/generate" />
+        </LinearLayout>
+    </FrameLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+* Coded by- Abhishek Kumar
+* This code is for generating gridcells for GridviewVisualisation.
+-->
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:focusableInTouchMode="false"
+    android:clickable="false"
+    android:focusable="false"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/rl"
+    >
+
+
+    <ImageView
+
+        android:id="@+id/imga"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="fitXY"
+        android:layout_marginStart="3dp"
+        android:layout_marginTop="3dp"
+        android:layout_marginLeft="3dp"
+
+
+        android:background="@layout/bounding"
+
+        />
+
+</RelativeLayout>

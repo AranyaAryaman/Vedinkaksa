@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clickable="true"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    android:orientation="vertical"
+    tools:context=".QuizTeacher">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:padding="10dp"
+                android:text="@string/enter_the_question"
+                android:textColor="#000000"
+                android:textSize="20sp" />
+
+            <EditText
+                android:id="@+id/questionText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:hint="@string/questions"
+                android:padding="10dp"
+                android:singleLine="true"
+                android:textSize="20sp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:layout_marginTop="10sp"
+                android:padding="10dp"
+                android:text="@string/enter_the_options"
+                android:textColor="#000000"
+                android:textSize="20sp" />
+
+            <EditText
+                android:id="@+id/option1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:layout_marginTop="9sp"
+                android:hint="Option 1"
+                android:padding="10dp"
+                android:singleLine="true"
+                android:textSize="20sp" />
+
+            <EditText
+                android:id="@+id/option2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:layout_marginTop="9sp"
+                android:hint="Option 2"
+                android:padding="10dp"
+                android:singleLine="true"
+                android:textSize="20sp" />
+
+            <EditText
+                android:id="@+id/option3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:layout_marginTop="9sp"
+                android:hint="Option 3"
+                android:padding="10dp"
+                android:singleLine="true"
+                android:textSize="20sp" />
+
+            <EditText
+                android:id="@+id/option4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:layout_marginTop="9sp"
+                android:hint="Option 4"
+                android:padding="10dp"
+                android:singleLine="true"
+                android:textSize="20sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:layout_marginTop="10sp"
+                    android:layout_marginBottom="25sp"
+                    android:padding="10dp"
+                    android:paddingEnd="15sp"
+                    android:text="Correct answer no. :"
+                    android:textColor="@color/black"
+                    android:textSize="20sp" />
+
+                <EditText
+                    android:id="@+id/correctAnswer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:layout_weight="1"
+                    android:inputType="number"
+                    android:lines="1"
+                    android:padding="10dp"
+                    android:singleLine="true" />
+
+
+            </LinearLayout>
+
+
+            <Button
+                android:id="@+id/submitButton"
+                android:layout_width="160dp"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:onClick="add_question"
+                android:text="Submit"
+                android:layout_gravity="center"
+                android:textColor="@color/white"
+                tools:ignore="MissingConstraints"
+                android:background="@drawable/quizbutton"
+                android:padding="10dp"
+                android:layout_margin="10dp"
+                />
+
+        </LinearLayout>
+    </ScrollView>
+
+
+</LinearLayout>

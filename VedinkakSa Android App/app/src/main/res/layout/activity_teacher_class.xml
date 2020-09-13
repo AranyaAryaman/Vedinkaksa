@@ -1,0 +1,42 @@
+<RelativeLayout android:layout_width="match_parent"
+    android:focusableInTouchMode="true"
+    android:clickable="true"
+    android:focusable="true"
+    android:layout_height="match_parent"
+    android:background="#ffffff"
+    xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <WebView
+        android:id="@+id/teacherpdfview"
+        android:layout_width="354dp"
+        android:layout_height="367dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginBottom="23dp"
+        android:layout_marginEnd="13dp"></WebView>
+
+
+    <Button
+        android:id="@+id/btnanswer"
+        android:layout_width="163dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="11dp"
+        android:background="#5278ff"
+        android:text="Answer Queries"
+        android:textColor="#ffffff" />
+
+    <Button
+        android:id="@+id/btnpdf"
+        android:layout_width="164dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="66dp"
+        android:background="#5278ff"
+        android:text="Select PDF"
+        android:textColor="#ffffff" />
+
+
+</RelativeLayout>
