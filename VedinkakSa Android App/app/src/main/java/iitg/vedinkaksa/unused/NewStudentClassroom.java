@@ -1,4 +1,4 @@
-package iitg.vedinkaksa;
+package iitg.vedinkaksa.unused;
 /*
  * Coded by - Abhishek Kumar
  * This code is used to get data from TeacherV( rows and columns) and generate grid accordingly.
@@ -9,6 +9,8 @@ package iitg.vedinkaksa;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+
+import iitg.vedinkaksa.R;
 
 public class NewStudentClassroom extends AppCompatActivity {
 

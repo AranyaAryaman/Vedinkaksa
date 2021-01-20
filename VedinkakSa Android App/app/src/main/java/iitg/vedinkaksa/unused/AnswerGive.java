@@ -1,4 +1,4 @@
-package iitg.vedinkaksa;
+package iitg.vedinkaksa.unused;
 /**
  * DISCLAIMER: Any Part or segment of the comments presented as documentation cannot be modified or removed without the proper permission from the current author. If any of the documentation in the public domain is found without proper credits and permission of the author, it will be dealt as plagiarism of the original code. However, part of the codes can be customized and used as per needs without any permission for personal use.
  * <p>
@@ -14,6 +14,11 @@ import android.text.InputType;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
+
+import iitg.vedinkaksa.ACTION;
+import iitg.vedinkaksa.BackgroundTaskOutput;
+import iitg.vedinkaksa.GLOBAL;
+import iitg.vedinkaksa.R;
 
 /**
  * This activity is presenting giving answer for the teacher

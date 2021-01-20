@@ -1,10 +1,14 @@
-package iitg.vedinkaksa;
+package iitg.vedinkaksa.unused;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+
+import iitg.vedinkaksa.R;
+import iitg.vedinkaksa.StudentQueryActivity;
+import iitg.vedinkaksa.StudentSlides;
 
 // Classroom Dashboard for student, for selecting the pdf slide
 public class StudentClassroom extends AppCompatActivity {

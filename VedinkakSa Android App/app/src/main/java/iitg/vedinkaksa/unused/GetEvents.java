@@ -1,11 +1,9 @@
-package iitg.vedinkaksa;
+package iitg.vedinkaksa.unused;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
-import android.content.Context;
 import android.graphics.PixelFormat;
 import android.os.Bundle;
 import android.util.Log;
@@ -15,16 +13,8 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.WindowManager;
-import android.view.WindowManager.LayoutParams;
-import android.widget.LinearLayout;
 
-import com.android.volley.Request;
-import com.android.volley.Response;
-import com.android.volley.VolleyError;
-import com.android.volley.toolbox.StringRequest;
-import com.android.volley.toolbox.Volley;
-
-import static android.content.Context.WINDOW_SERVICE;
+import iitg.vedinkaksa.R;
 
 // Get touch events for the touch model
 public class GetEvents extends Fragment implements View.OnTouchListener {

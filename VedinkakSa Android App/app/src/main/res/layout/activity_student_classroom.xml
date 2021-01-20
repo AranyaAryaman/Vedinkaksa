@@ -9,13 +9,13 @@
     android:focusable="true"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="iitg.vedinkaksa.StudentClassroom">
+    tools:context="iitg.vedinkaksa.unused.StudentClassroom">
     <!--Frame Layout holding all children -->
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:theme="@style/AppTheme"
-        tools:context=".StudentClassroom"
+        tools:context=".unused.StudentClassroom"
         tools:layout_editor_absoluteY="70dp"
         tools:ignore="MissingConstraints">
         <!-- Linear Layout holding options for PDF (Generating/Opening) -->
