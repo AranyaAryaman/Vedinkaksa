@@ -258,7 +258,7 @@ public class service extends Service implements View.OnTouchListener, SensorEven
         double percentAvail = mi.availMem / (double) mi.totalMem * 100.0;
 
         double memUsed = (mi.totalMem / 0x100000L) - availableMegs;
-        Log.i("RAM", "availableMegs: " + availableMegs + " percentAvail: " + percentAvail + " memUsed: " + memUsed);
+        Log.v("RAM", "availableMegs: " + availableMegs + " percentAvail: " + percentAvail + " memUsed: " + memUsed);
 
         return memUsed;
     }
@@ -269,7 +269,7 @@ public class service extends Service implements View.OnTouchListener, SensorEven
         final long maxHeapSizeInMB = runtime.maxMemory() / 1048576L;
         final long availHeapSizeInMB = maxHeapSizeInMB - usedMemInMB;
 
-        Log.i("RAM", "availHeapSizeInMB: " + availHeapSizeInMB + " maxHeapSizeInMB: " + maxHeapSizeInMB + " usedMemInMB: " + usedMemInMB);
+//        Log.v("RAM", "availHeapSizeInMB: " + availHeapSizeInMB + " maxHeapSizeInMB: " + maxHeapSizeInMB + " usedMemInMB: " + usedMemInMB);
         return usedMemInMB;
     }
 
@@ -695,14 +695,14 @@ public class service extends Service implements View.OnTouchListener, SensorEven
                 SHAKE_COUNT++; //counting shake values
                 Constants.shk_freq += 1;
             }
-            Log.i("Sensor Event", "accelerometer X: " + raw_acclerometer[0] + " Y: " + raw_acclerometer[1] + " Z: " + raw_acclerometer[2]);
+            Log.v("Sensor Event", "accelerometer X: " + raw_acclerometer[0] + " Y: " + raw_acclerometer[1] + " Z: " + raw_acclerometer[2]);
         } else if (event.sensor == gyroscope) {
             raw_gyroscope[0] = event.values[0];
             raw_gyroscope[1] = event.values[1];
             raw_gyroscope[2] = event.values[2];
             flags[2] = 1;
 
-            Log.i("Sensor Event", "gyroscope X: " + raw_gyroscope[0] + " Y: " + raw_gyroscope[1] + " Z: " + raw_gyroscope[2]);
+            Log.v("Sensor Event", "gyroscope X: " + raw_gyroscope[0] + " Y: " + raw_gyroscope[1] + " Z: " + raw_gyroscope[2]);
         }
 
     }
