@@ -81,6 +81,7 @@ public class PdfViewer extends AppCompatActivity {
         setContentView(R.layout.activity_pdf_viewer);
         intent = getIntent();
         fileName = intent.getStringExtra("name");
+        Log.d("Vinit", fileName);
         queries = new HashMap<>();
         final queryComparator<String> qc = new queryComparator<>();
         sortedQuery = new ArrayList<String>() {

@@ -1,85 +1,88 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-	xmlns:tools="http://schemas.android.com/tools"
-	package="iitg.vedinkaksa">
+    xmlns:tools="http://schemas.android.com/tools"
+    package="iitg.vedinkaksa">
 
-	<uses-permission android:name="android.permission.INTERNET" />
-	<uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-	<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-	<uses-permission android:name="android.permission.READ_PHONE_STATE" />
-	<uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
-	<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-	<uses-permission android:name="android.permission.ACTION_MANAGE_OVERLAY_PERMISSION" />
-	<uses-permission
-		android:name="android.permission.READ_LOGS"
-		tools:ignore="ProtectedPermissions" />
-	<uses-permission
-		android:name="android.permission.PACKAGE_USAGE_STATS"
-		tools:ignore="ProtectedPermissions" />
-	<!-- <uses-permission android:name="android.permission.GET_TASKS"/> -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission
+        android:name="android.permission.READ_LOGS"
+        tools:ignore="ProtectedPermissions" />
+    <uses-permission
+        android:name="android.permission.PACKAGE_USAGE_STATS"
+        tools:ignore="ProtectedPermissions" />
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" /> <!-- <uses-permission android:name="android.permission.GET_TASKS"/> -->
+    <uses-permission android:name="android.permission.ACTION_MANAGE_OVERLAY_PERMISSION" />
 
-	<application
-		android:name=".GlobalClass"
-		android:icon="@mipmap/ic_launcher"
-		android:label="@string/app_name"
-		android:roundIcon="@mipmap/ic_launcher_round"
-		android:supportsRtl="true"
-		android:theme="@style/AppTheme"
-		tools:ignore="GoogleAppIndexingWarning">
-		<!--        <activity android:name=".unused.GetEvents" />-->
-		<!--        <activity android:name=".unused.Activity1" />-->
-		<!--        <activity android:name=".unused.TeacherClass" />-->
-		<!--        <activity android:name=".unused.StudentQuizResult" />-->
-		<!--        <activity android:name=".unused.StudentClassroom" />-->
-		<!--        <activity android:name=".unused.QRScan" />-->
-		<!--        <activity android:name=".unused.NewStudentClassroom" />-->
-		<activity android:name=".PdfViewer" />
-		<activity android:name=".StudentSlides" />
-		<activity android:name=".StudentQueryActivity" />
-		<activity android:name=".QuizView" />
-		<activity android:name=".QuizRemoveQuestions" />
-		<activity android:name=".QuizTeacherMenu" />
-		<activity android:name=".AutomatedActivity" />
-		<activity android:name=".AnswerView" />
-		<activity android:name=".ComingSoon" />
-		<activity android:name=".unused.AnswerGive" />
-		<activity android:name=".StudentActivity" />
-		<activity android:name=".StudentNotes" />
-		<activity android:name=".UploadPics" />
-		<activity android:name=".GridviewVisualisation" />
-		<activity android:name=".Visualisation_screen" />
-		<activity android:name=".TeacherClassroom" />
-		<activity android:name=".TeacherActivity" />
-		<activity android:name=".AnswerQuery" />
-		<activity
-			android:name=".StudentClassnotes"
-			android:label="Notes" />
-		<activity
-			android:name=".QuizStudents"
-			android:label="Quiz" />
-		<activity
-			android:name=".QuizTeacher"
-			android:label="QUIZ" />
-		<activity
-			android:name=".DynamicVisualSecond"
-			android:theme="@style/mytheme" />
-		<activity
-			android:name=".TeacherV"
-			android:label="Enter Class Size"
-			android:theme="@style/mytheme" />
-		<activity
-			android:name=".DynamicVisualization"
-			android:label="Dynamic Visualisation"
-			android:theme="@style/mytheme" />
-		<activity android:name=".LoginActivity">
-			<intent-filter>
-				<action android:name="android.intent.action.MAIN" />
-				<category android:name="android.intent.category.LAUNCHER" />
-			</intent-filter>
-		</activity>
+    <application
+        android:name=".GlobalClass"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        tools:ignore="GoogleAppIndexingWarning">
+        <activity android:name=".QuizView"></activity>
+        <activity android:name=".QuizRemoveQuestions" />
+        <activity android:name=".QuizTeacherMenu" />
+        <activity android:name=".GetEvents" />
+        <activity android:name=".Activity1" />
+        <activity android:name=".PdfViewer" />
+        <activity android:name=".StudentSlides" />
+        <activity android:name=".StudentQueryActivity" />
+        <activity android:name=".StudentQuizResult" />
+        <activity
+            android:name=".DynamicVisualSecond"
+            android:theme="@style/mytheme" />
+        <activity
+            android:name=".DynamicVisualization"
+            android:label="Dynamic Visualisation"
+            android:theme="@style/mytheme" />
+        <activity android:name=".AutomatedActivity" />
+        <activity
+            android:name=".StudentClassnotes"
+            android:label="Notes" />
+        <activity
+            android:name=".QuizStudents"
+            android:label="Quiz" />
+        <activity android:name=".LoginActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
-		<service
-			android:name=".service"
-			android:enabled="true" />
-	</application>
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".QuizTeacher"
+            android:label="QUIZ" />
+        <activity android:name=".AnswerView" />
+        <activity android:name=".ComingSoon" />
+        <activity android:name=".AnswerGive" />
+        <activity android:name=".StudentActivity" />
+        <activity android:name=".StudentClassroom" />
+        <activity android:name=".StudentNotes" />
+        <activity android:name=".QRScan" />
+        <activity android:name=".UploadPics" />
+        <activity android:name=".GridviewVisualisation" />
+        <activity android:name=".Visualisation_screen" />
+        <activity android:name=".NewStudentClassroom" />
+        <activity
+            android:name=".TeacherV"
+            android:label="Enter Class Size"
+            android:theme="@style/mytheme" />
+        <activity android:name=".TeacherClass" />
+        <activity android:name=".TeacherClassroom" />
+        <activity android:name=".TeacherActivity" />
+        <activity android:name=".AnswerQuery" />
+
+        <service
+            android:name=".service"
+            android:enabled="true" />
+    </application>
+
 </manifest>

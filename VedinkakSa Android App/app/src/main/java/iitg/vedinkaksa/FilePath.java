@@ -1,5 +1,5 @@
 package iitg.vedinkaksa;
-/*
+/**
  * DISCLAIMER: Any Part or segment of the comments presented as documentation cannot be modified or removed without the proper permission from the current author. If any of the documentation in the public domain is found without proper credits and permission of the author, it will be dealt as plagiarism of the original code. However, part of the codes can be customized and used as per needs without any permission for personal use.
  * <p>
  * Author: Shashank Kotyan
@@ -15,13 +15,13 @@ import android.os.Build;
 import android.os.Environment;
 import android.provider.DocumentsContract;
 import android.provider.MediaStore;
-// Get fiepath for single or multi selections
+
 public class FilePath {
     /**
      * Method for return file path of Gallery image
      *
-     * @param context Current context
-     * @param uri URI of resource
+     * @param context
+     * @param uri
      * @return path of the selected image file from gallery
      */
 
@@ -48,7 +48,7 @@ public class FilePath {
 
                 final String id = DocumentsContract.getDocumentId(uri);
                 final Uri contentUri = ContentUris.withAppendedId(
-                        Uri.parse("content://downloads/public_downloads"), Long.parseLong(id));
+                        Uri.parse("content://downloads/public_downloads"), Long.valueOf(id));
 
                 return getDataColumn(context, contentUri, null, null);
             }

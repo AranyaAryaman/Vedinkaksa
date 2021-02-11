@@ -28,6 +28,9 @@ SET time_zone = "+00:00";
 -- Table structure for table `quiz_questions`
 --
 
+CREATE DATABASE quiz;
+USE quiz;
+
 CREATE TABLE `quiz_questions` (
   `id` int(11) NOT NULL,
   `question` varchar(111) NOT NULL,

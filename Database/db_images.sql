@@ -28,6 +28,9 @@ SET time_zone = "+00:00";
 -- Table structure for table `001`
 --
 
+CREATE DATABASE db_images;
+USE db_images;
+
 CREATE TABLE `001` (
   `Timestamp` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   `Mental_State` text NOT NULL,

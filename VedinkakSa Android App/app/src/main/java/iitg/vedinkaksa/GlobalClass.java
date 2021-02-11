@@ -5,7 +5,6 @@ import android.app.Application;
 
 import net.gotev.uploadservice.UploadService;
 
-// Global class that initializes Upload Service
 public class GlobalClass extends Application {
 
     private Integer kar;
@@ -47,7 +46,7 @@ public class GlobalClass extends Application {
         // Gradle automatically generates proper variable as below.
         UploadService.NAMESPACE = BuildConfig.APPLICATION_ID;
         // Or, you can define it manually.
-        // UploadService.NAMESPACE = "com.yourcompany.yourapp";
+        UploadService.NAMESPACE = "com.yourcompany.yourapp";
     }
 }
 

@@ -14,7 +14,7 @@ Author: Bishwaroop Bhattacharjee, Abhishek Kumar, Siddhi Joshi
     android:focusable="true"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="iitg.vedinkaksa.unused.StudentClassroom">
+    tools:context="iitg.vedinkaksa.StudentClassroom">
     <!-- Linear Layout holding all children-->
 
 
