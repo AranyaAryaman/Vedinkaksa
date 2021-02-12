@@ -27,7 +27,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".QuizView"></activity>
+        <activity android:name=".UploadToServer"></activity>
+        <activity android:name=".QuizView" />
         <activity android:name=".QuizRemoveQuestions" />
         <activity android:name=".QuizTeacherMenu" />
         <activity android:name=".GetEvents" />

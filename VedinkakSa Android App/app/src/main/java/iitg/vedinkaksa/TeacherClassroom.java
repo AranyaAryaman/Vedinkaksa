@@ -117,7 +117,8 @@ public class TeacherClassroom extends AppCompatActivity implements GLOBAL {
 
             @Override
             public void onClick(View view) {
-                showFileChooser();
+               showFileChooser();
+               // startActivity(new Intent(this, UploadToServer.class));
             }
         });
 
@@ -483,6 +484,7 @@ public class TeacherClassroom extends AppCompatActivity implements GLOBAL {
 
                 public boolean accept(File dir, String name) {
                     return ((name.endsWith(".pdf")));
+
                 }
             });
 
@@ -605,7 +607,7 @@ public class TeacherClassroom extends AppCompatActivity implements GLOBAL {
     public void PdfUploadFunction(File samplefile, String name) {
         String PdfNameHolder, PdfPathHolder, PdfID;
 
-        Log.d("upload", "PdfUploadFunction: started");
+        Log.d("MYUPLOAD1", "PdfUploadFunction: started");
 
         String PDF_UPLOAD_HTTP_URL = "http://" + debug + "/CoreFunctionality/uploadSlide.php";
 
@@ -619,11 +621,12 @@ public class TeacherClassroom extends AppCompatActivity implements GLOBAL {
         } else {
             try {
                 PdfID = UUID.randomUUID().toString();
-                new MultipartUploadRequest(this, PdfID, PDF_UPLOAD_HTTP_URL)
+                new MultipartUploadRequest(getApplicationContext(), PdfID, PDF_UPLOAD_HTTP_URL)
                         .addFileToUpload(PdfPathHolder, "pdf")
                         .addParameter("name", PdfNameHolder)
                         .setNotificationConfig(new UploadNotificationConfig())
                         .setMaxRetries(5)
+                        .setAutoDeleteFilesAfterSuccessfulUpload(false)
                         .startUpload();
 
                 Log.d("upload", "PdfUploadFunction: complete");

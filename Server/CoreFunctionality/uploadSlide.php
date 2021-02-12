@@ -8,9 +8,7 @@ error_reporting(E_ALL);
 
 ServerConfig();
 
-$PdfUploadFolder = 'uploads/';
-
-$ServerURL = 'http://localhost/Sites/Server/CoreFunctionality/' . $PdfUploadFolder;
+$ServerURL = 'http://192.168.1.6/Sites/Server/CoreFunctionality/uploads';
 
 if ( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
 
@@ -30,10 +28,8 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
 
 		try {
 
-			$isuploaded = move_uploaded_file( $_FILES['pdf']['tmp_name'], $PdfFileFinalPath );
-			error_log("Upload returns ".$isuplaoded."\n", 3, "/tmp/php.log");
-			$InsertTableSQLQuery =
-				"INSERT INTO slides (path, name) VALUES ('$PdfFileURL', '$PdfName') ;";
+			move_uploaded_file( $_FILES['pdf']['tmp_name'], $PdfFileFinalPath );
+			$InsertTableSQLQuery = "INSERT INTO slides (path, name) VALUES ('$PdfFileURL', '$PdfName') ;";
 
 			mysqli_query( $con, $InsertTableSQLQuery );
 

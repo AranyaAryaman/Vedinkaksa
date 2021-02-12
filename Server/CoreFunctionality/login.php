@@ -14,8 +14,9 @@ $sql = "SELECT roll, name, pass,url FROM images where roll ='$roll_check'";
 
 $result = $con->query( $sql );
 
-if ( $result->num_rows > 0 ) {
+if ( $result->num_rows > 0 ) {	
 	$row[] = $result->fetch_assoc();
+	$_SESSION['user'] = $row; 
 	print( json_encode( ( $row ) ) );
 } else {
 	echo "hello";

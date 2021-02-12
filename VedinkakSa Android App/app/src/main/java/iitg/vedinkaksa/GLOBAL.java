@@ -16,7 +16,7 @@ public interface GLOBAL {
 
     String SEND_QUERY_URL = SERVER_ADDRESS + "sendquery.php";
     String GIVE_ANS_QUERY_URL = SERVER_ADDRESS + "giveans.php";
-    String UPLOAD_SLIDES_URL = "http://" + Constants.debug + "/vishal/slidesurl/upload.php";
+    String UPLOAD_SLIDES_URL = "http://" + Constants.debug + "/Vishal/slidesurl/upload.php";
     String GET_DATA_QUERY_URL = SERVER_ADDRESS + "get_data.php";
     String GIVE_LIKE_QUERY_URL = SERVER_ADDRESS + "givelike.php";
     String COUNTER_QUERY_URL = SERVER_ADDRESS + "counter.php";

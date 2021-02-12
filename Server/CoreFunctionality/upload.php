@@ -10,7 +10,7 @@ $upload_path = 'uploads/';
 $server_ip = gethostbyname( gethostname() );
 
 //creating the upload url
-$upload_url = 'http://' . $server_ip . 'Sites/Server/CoreFunctionality/' . $upload_path;
+$upload_url = 'http://localhost/Sites/Server/CoreFunctionality/' . $upload_path;
 
 //response array
 $response = array();

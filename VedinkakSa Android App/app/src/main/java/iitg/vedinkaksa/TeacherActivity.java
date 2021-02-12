@@ -44,7 +44,7 @@ public class TeacherActivity extends Activity1 {
         visu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {                                                               //Line 39: For VIsualisation
-                Intent k = new Intent(TeacherActivity.this, Visualisation_screen.class);
+                Intent k = new Intent(TeacherActivity.this, DynamicVisualization.class);
                 if (Constants.cc == 1)                                                                         // Line 43: For Visualisation; Constants used, created by Bishwaroop Bhattacharjee
                     k.putExtra("selector", "YES");
                 else

@@ -49,7 +49,7 @@ public class Visualisation_screen extends AppCompatActivity {
     }
 
     // symbol based visualization
-    public void sym_based(View view) {
+    /*public void sym_based(View view) {
         Constants.sym = 1;
         if (selector.equals("YES"))
             startActivity(new Intent(this, TeacherV.class));
@@ -64,7 +64,7 @@ public class Visualisation_screen extends AppCompatActivity {
             startActivity(new Intent(this, TeacherV.class));
         else
             startActivity(new Intent(this, GridviewVisualisation.class));
-    }
+    }*/
 
     // dynamic visualization
     public void dynamic_based(View view) {
