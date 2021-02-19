@@ -83,7 +83,7 @@ public class TeacherActivity extends Activity1 {
 
     public void teachergetattendance(View view) {
 
-        startActivity(new Intent(this, AutomatedActivity.class));
+        startActivity(new Intent(this, TeacherAttendanceActivity.class));
     }
 
     public void teacherexaminations(View view) {

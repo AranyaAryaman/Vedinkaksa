@@ -7,65 +7,72 @@ Developed for: Affective Computing Team, IIT-Guwahati for development of vedinka
 
 -->
 <resources>
-    <!-- Application Name -->
-    <string name="app_name">vedinkakSa</string>
+	<!-- Application Name -->
+	<string name="app_name">vedinkakSa</string>
 
-    <!-- Strings related to login -->
-    <string name="prompt_username">Username</string>
-    <string name="prompt_password">Password</string>
-    <string name="action_sign_in_short">Sign in</string>
-    <string name="logged">You have been logged in as student</string>
-    <string name="logged_teacher">You have been logged in as teacher</string>
-    <!-- Error messages at no login -->
-    <string name="error_invalid_email">This email address is invalid</string>
-    <string name="error_invalid_password">This password is too short</string>
-    <string name="error_incorrect_password">This password is incorrect</string>
-    <string name="error_field_required">This field is required</string>
+	<!-- Strings related to login -->
+	<string name="prompt_username">Username</string>
+	<string name="prompt_password">Password</string>
+	<string name="action_sign_in_short">Sign in</string>
+	<string name="logged">You have been logged in as student</string>
+	<string name="logged_teacher">You have been logged in as teacher</string>
+	<!-- Error messages at no login -->
+	<string name="error_invalid_email">This email address is invalid</string>
+	<string name="error_invalid_password">This password is too short</string>
+	<string name="error_incorrect_password">This password is incorrect</string>
+	<string name="error_field_required">This field is required</string>
 
-    <!-- Question and Answer page pre-defined text -->
-    <string name="question_id">Question ID :</string>
-    <string name="question">Question :</string>
-    <string name="answer_by_teacher">Answer by Teacher :</string>
-    <string name="give_answer">Give Answer</string>
+	<!-- Question and Answer page pre-defined text -->
+	<string name="question_id">Question ID :</string>
+	<string name="question">Question :</string>
+	<string name="answer_by_teacher">Answer by Teacher :</string>
+	<string name="give_answer">Give Answer</string>
 
-    <!-- PDF handling texts -->
-    <string name="open_pdf">Open PDF</string>
-    <string name="generate_new_pdf">Generate new PDF</string>
-    <string name="generate">Generate</string>
-    <string name="enter_content">Enter content</string>
+	<!-- PDF handling texts -->
+	<string name="open_pdf">Open PDF</string>
+	<string name="generate_new_pdf">Generate new PDF</string>
+	<string name="generate">Generate</string>
+	<string name="enter_content">Enter content</string>
 
-    <!-- Texts for notes section -->
-    <string name="save_notes">Save Notes</string>
-    <string name="take_notes">Take Notes</string>
+	<!-- Texts for notes section -->
+	<string name="save_notes">Save Notes</string>
+	<string name="take_notes">Take Notes</string>
 
-    <!-- Texts for query section -->
-    <string name="ask_queries_here">Ask Queries Here…</string>
-    <string name="ask">Ask</string>
+	<!-- Texts for query section -->
+	<string name="ask_queries_here">Ask Queries Here…</string>
+	<string name="ask">Ask</string>
 
-    <!-- Miscellaneous -->
-    <string name="attendance">ATTENDANCE</string>
-    <string name="classroom">CLASSROOM</string>
-    <string name="get_attendance">GET ATTENDANCE</string>
-    <string name="examintions">EXAMINTIONS</string>
-    <string name="poll">POLL</string>
-    <string name="get_result">GET RESULT</string>
-    <string name="my_activities">MY ACTIVITIES</string>
-    <string name="student_activities">STUDENT ACTIVITIES</string>
-    <string name="comingsoon">ComingSoon</string>
+	<!-- Miscellaneous -->
+	<string name="attendance">ATTENDANCE</string>
+	<string name="classroom">CLASSROOM</string>
+	<string name="get_attendance">GET ATTENDANCE</string>
+	<string name="examintions">EXAMINTIONS</string>
+	<string name="poll">POLL</string>
+	<string name="get_result">GET RESULT</string>
+	<string name="my_activities">MY ACTIVITIES</string>
+	<string name="student_activities">STUDENT ACTIVITIES</string>
+	<string name="comingsoon">ComingSoon</string>
 
-    <!--quiz related -->
-    <string name="enter_the_question">Enter The Question</string>
-    <string name="enter_the_options">Enter The Options</string>
-    <string name="correct_answer">Enter correct answer</string>
-    <string name="questions">enter the questions here?</string>
-    <string name="all_options">enter 4 options separated by comma </string>
-    <string name="correctAnswer"> enter the correct answer no.</string>
-    <string name="next_questions">Next Questions</string>
-    <string name="previous_questions"> Previous Question</string>
-    <string name="options">Quiz Options</string>
-    <string name="quiz_question">1. Who Developed Android Studio?</string>
-    <string name="action_settings">Settings</string>
-    <string name="yes">Yes</string>
-    <string name="no">No</string>
-    <string name="Quiz">Quiz</string>
+	<!--quiz related -->
+	<string name="enter_the_question">Enter The Question</string>
+	<string name="enter_the_options">Enter The Options</string>
+	<string name="correct_answer">Enter correct answer</string>
+	<string name="questions">enter the questions here?</string>
+	<string name="all_options">enter 4 options separated by comma </string>
+	<string name="correctAnswer"> enter the correct answer no.</string>
+	<string name="next_questions">Next Questions</string>
+	<string name="previous_questions"> Previous Question</string>
+	<string name="options">Quiz Options</string>
+	<string name="quiz_question">1. Who Developed Android Studio?</string>
+	<string name="action_settings">Settings</string>
+	<string name="yes">Yes</string>
+	<string name="no">No</string>
+	<string name="Quiz">Quiz</string>
+	<string name="record_attendance">Record Attendance</string>
+	<string name="record_your_attendance_below_after_the_teacher_starts_the_attendance">Record your attendance below, after the teacher starts the attendance</string>
+	<string name="attendance_is_disabled">Attendance is DISABLED</string>
+	<string name="attendance_is_enabled">Attendance is enabled</string>
+	<string name="start_attendance">Start Attendance</string>
+	<string name="use_the_button_below_to_toggle_attendance_recording">Use the button below to toggle attendance recording</string>
+	<string name="stop_attendance">Stop Attendance</string>
 </resources>

@@ -181,7 +181,7 @@ public class StudentActivity extends AppCompatActivity {
 
     public void studentattendance(View view) {
 
-        startActivity(new Intent(this, AutomatedActivity.class));
+        startActivity(new Intent(this, StudentAttendanceActivity.class));
 
     }
 
