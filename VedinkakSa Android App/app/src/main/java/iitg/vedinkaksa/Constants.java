@@ -14,7 +14,9 @@ public class Constants {
     public static final String QUIZ_POST = "http://" + debug + "/CoreFunctionality/quiz/add_ques.php";
     public static final String QUIZ_DELETE = "http://" + debug + "/CoreFunctionality/quiz/del_all.php";
 
-    public static final String ATTENDANCE_START = "http://" + debug + "/CoreFunctionality/attendance/teachatt.php";
+    public static final String ATTENDANCE_START= "http://" + debug + "/CoreFunctionality/attendance/attendance.php";
+    public static final String URL_GET_ATT = "http://" + debug + "/CoreFunctionality/attendance/attendance.php";
+    public static final String URL_SET_ATT = "http://" + debug + "/CoreFunctionality/attendance/attendance2.php";
 
     // URL for logging in user
     public static final String UPLOAD_URL = "http://" + debug + "/CoreFunctionality/upload.php";

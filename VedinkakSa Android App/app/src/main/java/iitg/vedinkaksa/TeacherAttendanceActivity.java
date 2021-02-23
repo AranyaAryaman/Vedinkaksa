@@ -3,6 +3,7 @@ package iitg.vedinkaksa;
 import android.content.Context;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -28,6 +29,7 @@ public class TeacherAttendanceActivity extends AppCompatActivity {
 	private boolean isAttendanceStarted;
 	private RequestQueue requestQ;
 
+
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -39,13 +41,14 @@ public class TeacherAttendanceActivity extends AppCompatActivity {
 	}
 
 	private void getAttendanceStatus() {
-		// TODO: url
-		StringRequest strReq = new StringRequest(Request.Method.GET, "url",
+		StringRequest strReq = new StringRequest(Request.Method.GET, Constants.URL_GET_ATT,
 				new Response.Listener<String>() {
 					@Override
 					public void onResponse(String response) {
+						Toast.makeText(ctx, response, Toast.LENGTH_SHORT).show();
 						boolean result = response.toLowerCase().startsWith("yes");
 						if (result) {
+
 							isAttendanceStarted = true;
 							startRegistering();
 						} else {
@@ -57,7 +60,9 @@ public class TeacherAttendanceActivity extends AppCompatActivity {
 				new Response.ErrorListener() {
 					@Override
 					public void onErrorResponse(VolleyError error) {
-						Toast.makeText(ctx, "Network Error. Retry again later", Toast.LENGTH_SHORT).show();
+
+						Toast.makeText(ctx, error.getLocalizedMessage(), Toast.LENGTH_SHORT).show();
+						//Toast.makeText(ctx, "Network Error. Retry again later", Toast.LENGTH_SHORT).show();
 					}
 				});
 		requestQ.add(strReq);
@@ -79,11 +84,12 @@ public class TeacherAttendanceActivity extends AppCompatActivity {
 
 	public void register_attendance(View view) {
 		// TODO: url
-		StringRequest strReq = new StringRequest(Request.Method.POST, "url",
+		StringRequest strReq = new StringRequest(Request.Method.POST, Constants.URL_SET_ATT,
 				new Response.Listener<String>() {
 					@Override
 					public void onResponse(String response) {
-						if (response.toLowerCase().startsWith("start")) {
+						Toast.makeText(ctx, response, Toast.LENGTH_SHORT).show();
+						if (response.toLowerCase().startsWith("yes")) {
 							Toast.makeText(ctx, "Started attendance", Toast.LENGTH_LONG).show();
 							startRegistering();
 						} else {
@@ -95,8 +101,10 @@ public class TeacherAttendanceActivity extends AppCompatActivity {
 				new Response.ErrorListener() {
 					@Override
 					public void onErrorResponse(VolleyError error) {
-						Toast.makeText(ctx, "Network Error. Retry again later", Toast.LENGTH_SHORT).show();
+						Toast.makeText(ctx, error.toString(), Toast.LENGTH_SHORT).show();
+						//Toast.makeText(ctx, "Network Error. Retry again later", Toast.LENGTH_SHORT).show();
 					}
+
 				}) {
 			@Override
 			protected Map<String, String> getParams() {

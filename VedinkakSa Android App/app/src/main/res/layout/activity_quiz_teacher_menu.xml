@@ -38,15 +38,14 @@
         android:onClick="addQuestion"/>
 
 
-
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="New Quiz"
-        android:background="@drawable/quizbutton"
         android:layout_margin="10dp"
+        android:background="@drawable/quizbutton"
+        android:onClick="newQuiz"
         android:padding="10dp"
-        android:onClick="newQuiz"/>
+        android:text="Clear Everything" />
 
 
 </LinearLayout>

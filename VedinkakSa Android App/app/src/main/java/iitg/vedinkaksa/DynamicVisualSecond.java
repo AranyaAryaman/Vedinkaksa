@@ -1,11 +1,4 @@
 package iitg.vedinkaksa;
-/**
- * DISCLAIMER: Any Part or segment of the comments presented as documentation cannot be modified or removed without the proper permission from the current author. If any of the documentation in the public domain is found without proper credits and permission of the author, it will be dealt as plagiarism of the original code. However, part of the codes can be customized and used as per needs without any permission for personal use.
- * <p>
- * Author: Shashank Kotyan
- * Contact details: shashank15100@iiitnr.edu.in; shashankkotyan@gmail.com
- * Developed for: Affective Computing Team, IIT-Guwahati for development of vedinkakSa, a sensitive classroom application.
- */
 
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
@@ -50,8 +43,7 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 
-// This code was being used for static visualisation by using data from a test file.
-// We are using this code directly, in order to implement the real time dynamic visualisation
+
 public class DynamicVisualSecond extends Activity {
 
     private static HashMap sortByValues(HashMap map) {
