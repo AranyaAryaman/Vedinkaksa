@@ -28,6 +28,7 @@ public class TeacherAttendanceActivity extends AppCompatActivity {
 	private boolean isAttendanceStarted;
 	private RequestQueue requestQ;
 
+
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -93,6 +94,7 @@ public class TeacherAttendanceActivity extends AppCompatActivity {
 					public void onErrorResponse(VolleyError error) {
 						Toast.makeText(ctx, "Network Error. Retry again later", Toast.LENGTH_SHORT).show();
 					}
+
 				}) {
 			@Override
 			protected Map<String, String> getParams() {
