@@ -39,17 +39,14 @@ public class TeacherAttendanceActivity extends AppCompatActivity {
 	}
 
 	private void getAttendanceStatus() {
-		// TODO: url
-		StringRequest strReq = new StringRequest(Request.Method.GET, "url",
+		StringRequest strReq = new StringRequest(Request.Method.GET, Constants.GET_ATTENDANCE_STATUS,
 				new Response.Listener<String>() {
 					@Override
 					public void onResponse(String response) {
-						boolean result = response.toLowerCase().startsWith("yes");
+						boolean result = response.toLowerCase().startsWith("true");
 						if (result) {
-							isAttendanceStarted = true;
 							startRegistering();
 						} else {
-							isAttendanceStarted = false;
 							stopRegistering();
 						}
 					}
@@ -77,13 +74,12 @@ public class TeacherAttendanceActivity extends AppCompatActivity {
 		registerAttendanceButton.setText(R.string.start_attendance);
 	}
 
-	public void register_attendance(View view) {
-		// TODO: url
-		StringRequest strReq = new StringRequest(Request.Method.POST, "url",
+	public void change_attendance_status(View view) {
+		StringRequest strReq = new StringRequest(Request.Method.POST, Constants.SET_ATTENDANCE_STATUS,
 				new Response.Listener<String>() {
 					@Override
 					public void onResponse(String response) {
-						if (response.toLowerCase().startsWith("start")) {
+						if (response.toLowerCase().startsWith("true")) {
 							Toast.makeText(ctx, "Started attendance", Toast.LENGTH_LONG).show();
 							startRegistering();
 						} else {
@@ -101,7 +97,12 @@ public class TeacherAttendanceActivity extends AppCompatActivity {
 			@Override
 			protected Map<String, String> getParams() {
 				Map<String, String> params = new HashMap<>();
-				params.put("attendance_status", String.valueOf(!isAttendanceStarted));
+				if (isAttendanceStarted) {
+					params.put("attendance_status", "false");
+				} else {
+					params.put("attendance_status", "true");
+				}
+
 				return params;
 			}
 		};

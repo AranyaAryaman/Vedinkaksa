@@ -17,6 +17,9 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class StudentAttendanceActivity extends AppCompatActivity {
 
 	private final Context ctx = this;
@@ -37,16 +40,14 @@ public class StudentAttendanceActivity extends AppCompatActivity {
 
 	private void getAttendanceStatus() {
 		// TODO: url
-		StringRequest strReq = new StringRequest(Request.Method.GET, "url",
+		StringRequest strReq = new StringRequest(Request.Method.GET, Constants.GET_ATTENDANCE_STATUS,
 				new Response.Listener<String>() {
 					@Override
 					public void onResponse(String response) {
-						boolean result = response.toLowerCase().startsWith("yes");
+						boolean result = response.toLowerCase().startsWith("true");
 						if (result) {
-							isAttendanceStarted = true;
 							startRegistering();
 						} else {
-							isAttendanceStarted = false;
 							stopRegistering();
 						}
 					}
@@ -77,13 +78,18 @@ public class StudentAttendanceActivity extends AppCompatActivity {
 	public void register_attendance(View view) {
 		if (!isAttendanceStarted)
 			return;
-		// TODO: url
-		StringRequest strReq = new StringRequest(Request.Method.GET, "url",
+		StringRequest strReq = new StringRequest(Request.Method.POST, Constants.REGISTER_ATTENDANCE,
 				new Response.Listener<String>() {
 					@Override
 					public void onResponse(String response) {
-						Toast.makeText(ctx, "Attendance recorded. The button will now be disabled for you", Toast.LENGTH_LONG).show();
-						stopRegistering();
+						boolean result = response.toLowerCase().startsWith("true");
+						if (result) {
+							Toast.makeText(ctx, "Attendance recorded successfully", Toast.LENGTH_LONG).show();
+							stopRegistering();
+						} else {
+							Toast.makeText(ctx, "Attendance could not be recorded", Toast.LENGTH_SHORT).show();
+							startRegistering();
+						}
 					}
 				},
 				new Response.ErrorListener() {
@@ -91,7 +97,14 @@ public class StudentAttendanceActivity extends AppCompatActivity {
 					public void onErrorResponse(VolleyError error) {
 						Toast.makeText(ctx, "Network Error. Retry again later", Toast.LENGTH_SHORT).show();
 					}
-				});
+				}) {
+			@Override
+			protected Map<String, String> getParams() {
+				Map<String, String> params = new HashMap<>();
+				params.put("username", Constants.student_id);
+				return params;
+			}
+		};
 		requestQ.add(strReq);
 	}
 }

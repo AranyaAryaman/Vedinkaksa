@@ -15,6 +15,9 @@ public class Constants {
     public static final String QUIZ_DELETE = "http://" + debug + "/CoreFunctionality/quiz/del_all.php";
 
     public static final String ATTENDANCE_START = "http://" + debug + "/CoreFunctionality/attendance/teachatt.php";
+    public static final String GET_ATTENDANCE_STATUS = "http://" + debug + "/CoreFunctionality/attendance/get_attendance_status.php";
+    public static final String SET_ATTENDANCE_STATUS = "http://" + debug + "/CoreFunctionality/attendance/set_attendance_status.php";
+    public static final String REGISTER_ATTENDANCE = "http://" + debug + "/CoreFunctionality/attendance/register_attendance.php";
 
     // URL for logging in user
     public static final String UPLOAD_URL = "http://" + debug + "/CoreFunctionality/upload.php";
