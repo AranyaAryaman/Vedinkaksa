@@ -36,7 +36,7 @@ for ( $i = 1; $i <= $row; $i ++ ) {
 
 	}
 }
-//$result =mysqli_multi_query($con,$sql);
+
 if ( $result ) {
 
 	print( json_encode( $result ) );

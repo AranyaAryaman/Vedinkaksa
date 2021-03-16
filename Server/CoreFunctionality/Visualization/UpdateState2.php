@@ -13,25 +13,24 @@ if (!$conn) {
 }
 
 $student_id = $_POST['student_id'];
-$valence = $_POST['Valence'];
-$arousal = $_POST['Arousal'];
-$involvement = $_POST['Involvement'];
-$activity = $_POST['Activity'];
-$mental_state = $_POST['Mental_state'];
-$visualization_state = $_POST['Visualization_state'];
-$alert = $_POST['Alert'];
+$valence = $_POST['valence'];
+$arousal = $_POST['arousal'];
+$involvement = $_POST['involvement'];
+$activity = $_POST['classroom_activity'];
+$state = $_POST['emotional_state'];
+$mental_state = $_POST['mental_state'];
+$visualization_state = $_POST['visualisation_state'];
 
 # FIXME: What is State here?
-$sql = "INSERT INTO temp_states (student_id, Involvement, Activity, Arousal, Valence, Mental_State, Visualization_State, Alert, `State`) VALUES ('$student_id', $involvement, $activity, $arousal, $valence, $mental_state, $visualization_state, $alert, 1)";
-echo $sql;
+$sql = "INSERT INTO temp_states (student_id, Involvement, Activity, Arousal, Valence, Mental_State, Visualization_State, Alert, `State`) VALUES ('$student_id', $involvement, $activity, $arousal, $valence, $mental_state, $visualization_state, 1, $state)";
+
+
 if(mysqli_query($conn, $sql)){
 	echo("true");
-} else {
-	echo("\nfalse");
-	echo mysqli_error($conn);
+} 
+
+else {
+	echo("false");
 }
 
-
-
-return updateStates($student_id, $involvement, $activity, $arousal,	$valence, $mental_state, $visualization_state, $alert);
 ?>

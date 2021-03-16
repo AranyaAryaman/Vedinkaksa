@@ -30,8 +30,8 @@ public class Constants {
     public static final String INVOLVEMENT = "http://" + debug1 + "/involvementModel";
     // For updating and getting the student states
     // TODO
-    public static final String STATE = "http://" + debug + "/CoreFunctionality/updateState.php";
-    public static final String GET_ALL_STATES = "http://" + debug + "/CoreFunctionality/Visualization/getAllVisualizationStates.php";
+    public static final String STATE = "http://" + debug + "/CoreFunctionality/Visualization/UpdateState2.php";
+    public static final String GET_ALL_STATES = "http://" + debug + "/CoreFunctionality/Visualization/getAllVisualizationStates2.php";
 
     // Global variables
     public static int rowss, ht, abb, st, wd, coll;

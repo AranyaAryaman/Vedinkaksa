@@ -100,12 +100,12 @@ CREATE TABLE `db_images`.`Visualisation_States` (
   `Derived_States` int(11) NOT NULL,
   `Alert` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-CREATE TABLE `attendance_records` (
+CREATE TABLE `db_images`.`attendance_records` (
   `username` varchar(20) NOT NULL,
   `attendance_time` timestamp NOT NULL DEFAULT current_timestamp(),
   `class` varchar(8) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-CREATE TABLE `attendance_status` (
+CREATE TABLE `db_images`.`attendance_status` (
   `status` varchar(8) NOT NULL DEFAULT 'false',
   `class` varchar(8) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;

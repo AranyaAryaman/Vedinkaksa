@@ -666,7 +666,7 @@ public class DynamicVisualization extends Activity {
                         // Display the first 500 characters of the response string.
                         // textView.setText("Response is: "+ response.substring(0,500));
 
-                        Log.i("quizPOST", response);
+                        Log.i("visualisationPOST", response);
                         try {
                             StudentList = new JSONArray(response);
                         } catch (JSONException e) {
