@@ -13,6 +13,7 @@ if (!$conn) {
 }
 
 $student_id = $_POST['student_id'];
+#$student_id = $_SESSION['user'];
 $valence = $_POST['valence'];
 $arousal = $_POST['arousal'];
 $involvement = $_POST['involvement'];
