@@ -148,7 +148,7 @@ def involvementModelOut(batteryTemp, avgMemory, acceleration, rotationSpeed, rol
     phpdata = {"roll": roll, "state": predicted,
                "ts": datetime.datetime.now()}
     print(phpdata)
-    rq = requests.post('http://localhost/AndroidImageUpload/pyphp.php', params=phpdata)
+    rq = requests.post('http://localhost/Sites/Server/CoreFunctionality/Visualization/UpdateState2.php', params=phpdata)
     # print(rq.url)
     print(roll)
     return predicted
