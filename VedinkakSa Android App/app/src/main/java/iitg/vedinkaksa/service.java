@@ -429,6 +429,10 @@ public class service extends Service implements View.OnTouchListener, SensorEven
 
     // send the current mental and visualisation states of the student to the server
     public void stateRequest() {
+        if(student_id == null || student_id.equals("")){
+            // Do not send stats for teacher
+            return;
+        }
         if (requestQueue == null) {
             requestQueue = Volley.newRequestQueue(this);
         }

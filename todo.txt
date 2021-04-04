@@ -1,0 +1,6 @@
+Add the following to mysql script
+```
+create table slide_sync ( `name` varchar(20) NOT NULL, `page` int DEFAULT 0 );
+insert into slide_sync ("test1.pdf", 0);
+```
+
