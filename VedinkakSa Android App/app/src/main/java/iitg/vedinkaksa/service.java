@@ -364,7 +364,7 @@ public class service extends Service implements View.OnTouchListener, SensorEven
 
         Log.i("involvmentService", url);
         // Request a string response from the provided URL.
-        StringRequest stringRequest = new StringRequest(Request.Method.POST, url,
+        StringRequest stringRequest = new StringRequest(Request.Method.GET, url,
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
@@ -449,11 +449,10 @@ public class service extends Service implements View.OnTouchListener, SensorEven
             public void onErrorResponse(VolleyError error) {
                 Log.d("statePOST", "failure :(");
             }
-
         }) {
             @Override
             protected Map<String, String> getParams() {
-                Map<String, String> params = new HashMap<String, String>();
+                Map<String, String> params = new HashMap<>();
                 params.put("student_id", String.valueOf(student_id));
                 params.put("valence", String.valueOf(valence));
                 params.put("arousal", String.valueOf(arousal));
@@ -462,6 +461,7 @@ public class service extends Service implements View.OnTouchListener, SensorEven
                 params.put("emotional_state", String.valueOf(emotional_state));
                 params.put("mental_state", String.valueOf(mental_state));
                 params.put("visualisation_state", String.valueOf(visualisation_state));
+                Log.d("Touch service", String.valueOf(params));
                 return params;
             }
         };
