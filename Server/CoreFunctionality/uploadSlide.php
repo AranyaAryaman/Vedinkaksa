@@ -8,7 +8,8 @@ error_reporting(E_ALL);
 
 ServerConfig();
 
-$ServerURL = 'http://192.168.1.6/Sites/Server/CoreFunctionality/uploads';
+$ServerURL = 'http://localhost/Sites/Server/CoreFunctionality/uploads/';
+$PdfUploadFolder = "uploads/";
 
 if ( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
 
@@ -67,4 +68,3 @@ function GenerateFileNameUsingID() {
 		return ++ $Holder['id'];
 	}
 }
-

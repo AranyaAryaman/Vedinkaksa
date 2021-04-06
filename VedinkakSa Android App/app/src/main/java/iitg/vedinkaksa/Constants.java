@@ -4,7 +4,7 @@ package iitg.vedinkaksa;
 public class Constants {
 
     // BASE IP
-    public static final String SERVER_IP = "192.168.1.4"; // Don't put '/' in the end
+    public static final String SERVER_IP = "192.168.1.40"; // Don't put '/' in the end
 
     public static final String debug = SERVER_IP + "/Sites/Server";
     public static final String debug1 = SERVER_IP + ":5000";

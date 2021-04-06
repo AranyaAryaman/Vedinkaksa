@@ -129,9 +129,9 @@ INSERT INTO `db_images`.`State_Calc` (`timestamp`, `roll`, `involvement`, `Arous
 ('2018-07-06 23:18:55', 'siddhi', 1, 1, 1, 1, 1, 's1');
 
 INSERT INTO `db_images`.`slides` (`id`, `path`, `name`) VALUES
-(16, 'http://localhost/Sites/Server/AndroidImageUpload/uploads/siddharth.pdf', 'siddharth.pdf'),
-(17, 'http://localhost/Sites/Server/AndroidImageUpload/uploads/networks.pdf', 'networks.pdf'),
-(18, 'http://localhost/Sites/Server/AndroidImageUpload/uploads/stackoverflow.pdf', 'stackoverflow.pdf');
+(16, 'http://localhost/Sites/Server/CoreFunctionality/uploads/siddharth.pdf', 'siddharth.pdf'),
+(17, 'http://localhost/Sites/Server/CoreFunctionality/uploads/networks.pdf', 'networks.pdf'),
+(18, 'http://localhost/Sites/Server/CoreFunctionality/uploads/stackoverflow.pdf', 'stackoverflow.pdf');
 
 INSERT INTO `db_images`.`Seat_arrangement` (`student_id`, `seat_row`, `seat_column`) VALUES
 ('001', 1, 1),
@@ -142,7 +142,8 @@ INSERT INTO `db_images`.`Seat_arrangement` (`student_id`, `seat_row`, `seat_colu
 ('samsung', 2, 3),
 ('sony2', 3, 1),
 ('sony1', 3, 2),
-('160101072', 3, 3);
+('160101072', 3, 3),
+('170101015', 4, 3);
 
 INSERT INTO `db_images`.`queries` (`q_id`, `query`, `page`, `slide`, `likes`, `timestamp`, `is_answered`, `answer`, `answer_added`) VALUES
 (2, 'what is abc', 4, 'networks.pdf', 3, '2019-09-12 11:28:23', 0, NULL, '2019-09-12 11:28:23'),
@@ -154,17 +155,17 @@ INSERT INTO `db_images`.`queries` (`q_id`, `query`, `page`, `slide`, `likes`, `t
 (23, 'test question', 3, 'networks.pdf', 1, '2020-02-14 12:05:44', 0, NULL, '2020-02-14 12:05:44');
 
 INSERT INTO `db_images`.`images` (`id`, `url`, `name`, `roll`, `pass`) VALUES
-('001', 'http://localhost/AndroidImageUpload/uploads/001.jpg', 'animesh', '001', 'animesh'),
-('160101071', 'http://localhost/AndroidImageUpload/uploads/160101071.jpeg', 'unable error', '160101071', '123'),
-('160101072', 'http://localhost/AndroidImageUpload/uploads/160101072.jpeg', '160101072', '160101072', '123456'),
-('asus', 'http://localhost/AndroidImageUpload/uploads/asus.jpeg', 'asus', 'asus', '123456'),
-('htc', 'http://localhost/AndroidImageUpload/uploads/htc.jpeg', 'htc', 'htc', '123456'),
+('001', 'http://localhost/Sites/Server/CoreFunctionality/uploads/001.jpg', 'animesh', '001', 'animesh'),
+('160101071', 'http://localhost/Sites/Server/CoreFunctionality/uploads/160101071.jpeg', 'unable error', '160101071', '123'),
+('160101072', 'http://localhost/Sites/Server/CoreFunctionality/uploads/160101072.jpeg', '160101072', '160101072', '123456'),
+('asus', 'http://localhost/Sites/Server/CoreFunctionality/uploads/asus.jpeg', 'asus', 'asus', '123456'),
+('htc', 'http://localhost/Sites/Server/CoreFunctionality/uploads/htc.jpeg', 'htc', 'htc', '123456'),
 ('IITG100', '', 'sid', 'IITG100', '100'),
-('moto', 'http://localhost/AndroidImageUpload/uploads/moto.jpeg', 'moto', 'moto', '123456'),
-('samsung', 'http://localhost/AndroidImageUpload/uploads/samsung.jpeg', 'samsung', 'samsung', '123456'),
-('sony1', 'http://localhost/AndroidImageUpload/uploads/sony1.jpeg', 'sony1', 'sony1', '123456'),
-('sony2', 'http://localhost/AndroidImageUpload/uploads/sony2.jpeg', 'sony2', 'sony2', '123456');
-
+('moto', 'http://localhost/Sites/Server/CoreFunctionality/uploads/moto.jpeg', 'moto', 'moto', '123456'),
+('samsung', 'http://localhost/Sites/Server/CoreFunctionality/uploads/samsung.jpeg', 'samsung', 'samsung', '123456'),
+('sony1', 'http://localhost/Sites/Server/CoreFunctionality/uploads/sony1.jpeg', 'sony1', 'sony1', '123456'),
+('sony2', 'http://localhost/Sites/Server/CoreFunctionality/uploads/sony2.jpeg', 'sony2', 'sony2', '123456'),
+("170101015","http://localhost/Sites/Server/CoreFunctionality/uploads/170101015.jpg", "Avneet", "170101015","Avneet");
 INSERT INTO `db_images`.`attendance_status` (`status`, `class`) VALUES
 ('false', 'CS');
 
