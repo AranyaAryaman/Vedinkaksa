@@ -461,7 +461,7 @@ public class service extends Service implements View.OnTouchListener, SensorEven
                 params.put("emotional_state", String.valueOf(emotional_state));
                 params.put("mental_state", String.valueOf(mental_state));
                 params.put("visualisation_state", String.valueOf(visualisation_state));
-                Log.d("Touch service", String.valueOf(params));
+                Log.d("Touchservice", String.valueOf(params));
                 return params;
             }
         };
@@ -699,14 +699,14 @@ public class service extends Service implements View.OnTouchListener, SensorEven
                 SHAKE_COUNT++; //counting shake values
                 Constants.shk_freq += 1;
             }
-            //Log.i("Sensor Event", "accelerometer X: " + raw_acclerometer[0] + " Y: " + raw_acclerometer[1] + " Z: " + raw_acclerometer[2]);
+            //Log.i("SensorEvent", "accelerometer X: " + raw_acclerometer[0] + " Y: " + raw_acclerometer[1] + " Z: " + raw_acclerometer[2]);
         } else if (event.sensor == gyroscope) {
             raw_gyroscope[0] = event.values[0];
             raw_gyroscope[1] = event.values[1];
             raw_gyroscope[2] = event.values[2];
             flags[2] = 1;
 
-            //Log.i("Sensor Event", "gyroscope X: " + raw_gyroscope[0] + " Y: " + raw_gyroscope[1] + " Z: " + raw_gyroscope[2]);
+            //Log.i("SensorEvent", "gyroscope X: " + raw_gyroscope[0] + " Y: " + raw_gyroscope[1] + " Z: " + raw_gyroscope[2]);
         }
 
     }

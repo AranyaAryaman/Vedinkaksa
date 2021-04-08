@@ -25,7 +25,7 @@ public interface GLOBAL {
     String VISUALISATION_QUERY_URL = "http://" + Constants.debug + "/CoreFunctionality/truncating.php";
     String GRIDVIEW_CONNECTION = "http://" + Constants.debug + "/CoreFunctionality/student.php";
 
-    String PHOTO = "empty.jpeg";
+    String PHOTO = "empty.jpg";
     String PHOTO_URL = "http://" + Constants.debug + "/CoreFunctionality/uploads/";
 
     String ASKING = "asking";

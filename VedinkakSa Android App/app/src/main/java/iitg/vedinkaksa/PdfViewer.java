@@ -484,13 +484,13 @@ public class PdfViewer extends AppCompatActivity {
 
     // update the query dashboard with new questions, answers, and updated like cound
     private void updateQuery() {
-        Log.i("Update Query", df.format(lastQuestionAdded) + ", " + dummyTime);
+        Log.i("UpdateQuery", df.format(lastQuestionAdded) + ", " + dummyTime);
 
         if (df.format(lastQuestionAdded).equals(dummyTime)) {
-            Log.i("Update Query", "getAllQuery()");
+            Log.i("UpdateQuery", "getAllQuery()");
             getAllQuery();
         } else {
-            Log.i("Update Query", "getNewQuery()");
+            Log.i("UpdateQuery", "getNewQuery()");
             getNewQueries();
             getLikes();
             getAnsweredQueries();
@@ -503,7 +503,7 @@ public class PdfViewer extends AppCompatActivity {
         StringRequest getAllQuery = new StringRequest(Request.Method.POST, getAllQueryUrl, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
-                Log.e("print VOLLEY", "getAllQuery " + response);
+                Log.e("printVOLLEY", "getAllQuery " + response);
                 try {
                     String question, qid, likes, timestamp, isAnswered;
                     if (response.equals("")) {
@@ -586,7 +586,7 @@ public class PdfViewer extends AppCompatActivity {
         StringRequest getNewQueries = new StringRequest(Request.Method.POST, getNewQueryUrl, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
-                Log.e("Print Volley", "getNewQuery: " + response);
+                Log.e("PrintVolley", "getNewQuery: " + response);
                 try {
                     String question, qid, likes, timestamp, isAnswered;
                     if (response.equals("")) {
