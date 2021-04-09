@@ -17,7 +17,7 @@ if ( mysqli_connect_error( $con ) ) {
 	echo "Connection failed: " . mysqli_connect_error;
 }
 
-$default_url = "http://192.168.1.6/Sites/Server/CoreFunctionality/uploads/empty.jpg";
+$default_url = "http://localhost/Sites/Server/CoreFunctionality/uploads/empty.jpg";
 $defroll = "empty";
 $sql = "TRUNCATE TABLE image_tbl;";
 $sqlq = "TRUNCATE TABLE queries;";

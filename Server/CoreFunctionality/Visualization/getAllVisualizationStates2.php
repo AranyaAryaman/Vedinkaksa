@@ -9,7 +9,7 @@ if (!$conn) {
 	die();
 }
 
-$sql = "SELECT Seat_arrangement.student_id, Seat_arrangement.seat_row, Seat_arrangement.seat_column, temp_states.Visualization_State FROM Seat_arrangement INNER JOIN temp_states on Seat_arrangement.student_id = temp_states.student_id";
+$sql = "SELECT image_tbl.roll, image_tbl.PosX, image_tbl.PosY, temp_states.Visualization_State FROM image_tbl INNER JOIN temp_states on image_tbl.roll = temp_states.student_id";
 
 $result = mysqli_query($conn, $sql);
 $res = array();

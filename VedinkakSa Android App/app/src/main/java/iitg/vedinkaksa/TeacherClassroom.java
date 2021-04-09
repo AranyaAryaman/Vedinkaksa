@@ -281,7 +281,7 @@ public class TeacherClassroom extends AppCompatActivity implements GLOBAL {
         screenView.setDrawingCacheEnabled(false);
         String page = String.valueOf(currentPage);
         new BackgroundTaskOutput().execute(COUNTER_QUERY_URL, page);
-        File file = new File(SCREENSHOT_FILE + File.separator + PHOTO);
+        File file = new File(SCREENSHOT_FILE + File.separator + PHOTO + ".jpg");
         try {
             FileOutputStream fOut = new FileOutputStream(file);
             bitmap.compress(Bitmap.CompressFormat.PNG, 100, fOut);

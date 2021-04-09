@@ -96,11 +96,11 @@ public class QueryAdapter extends BaseExpandableListAdapter {
             likeButton.setFocusable(false);
 
             final String qid = sortedQueries.get(position);
-            Log.i("Query Adapter", "pos: " + position + ", " + qid);
+            Log.i("QueryAdapter", "pos: " + position + ", " + qid);
             if (queries.get(qid) != null) {
                 final HashMap<String, String> queryAttributes = queries.get(qid);
                 query.setText(queryAttributes.get("question"));
-                Log.i("Query Adapter", "pos: " + position + ",  " + qid + ", " + queryAttributes.get("question"));
+                Log.i("QueryAdapter", "pos: " + position + ",  " + qid + ", " + queryAttributes.get("question"));
                 final String noOfLikes = queryAttributes.get("likes");
                 likes.setText(noOfLikes);
             }
@@ -116,11 +116,11 @@ public class QueryAdapter extends BaseExpandableListAdapter {
             likeButton.setFocusable(false);
 
             final String qid = sortedQueries.get(position);
-            Log.i("Query Adapter", "pos: " + position + ", " + qid);
+            Log.i("QueryAdapter", "pos: " + position + ", " + qid);
             if (queries.get(qid) != null) {
                 final HashMap<String, String> queryAttributes = queries.get(qid);
                 query.setText(queryAttributes.get("question"));
-                Log.i("Query Adapter", "pos: " + position + ",  " + qid + ", " + queryAttributes.get("question"));
+                Log.i("QueryAdapter", "pos: " + position + ",  " + qid + ", " + queryAttributes.get("question"));
                 final String noOfLikes = queryAttributes.get("likes");
                 likes.setText(noOfLikes);
                 likeButton.setOnClickListener(new View.OnClickListener() {
