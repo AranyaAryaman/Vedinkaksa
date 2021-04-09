@@ -703,10 +703,10 @@ public class service extends Service implements View.OnTouchListener, SensorEven
                     if(visualisation_state==4)s4_count++;
 
                     int tot = s1_count + s2_count + s3_count + s4_count;
-                    //Log.d("tot_out", String.valueOf(tot));
-                    if(tot>=40)
+                    Log.d("tot_out", String.valueOf(tot));
+                    if(tot>=10)
                     {
-                      //  Log.d("tot_in", String.valueOf(tot));
+                       Log.d("tot_in", String.valueOf(tot));
                         Log.d("consecutive_alerts  ", String.valueOf(consecutive_alert));
                         tot=0;
                         if(consecutive_alert>=3)

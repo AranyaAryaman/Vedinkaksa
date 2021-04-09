@@ -73,7 +73,7 @@ import static iitg.vedinkaksa.Constants.valence;
 
 // Grid formation and coloring algorithm for the dynamic visualisation
 // This code was being used for static visualisation by using data from a test file.
-// We are using this code directly, in order to implement the real time dynamic visualisation
+// We are using this code directly, in order to implement the real time dynamconsecutiveic visualisation
 public class DynamicVisualization extends Activity {
 
     private static HashMap sortByValues(HashMap map) {
