@@ -4,6 +4,9 @@ import android.annotation.SuppressLint;
 import android.annotation.TargetApi;
 import android.app.ActivityManager;
 import android.app.AlertDialog;
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
+import android.app.PendingIntent;
 import android.app.Service;
 import android.app.usage.UsageStats;
 import android.app.usage.UsageStatsManager;
@@ -14,11 +17,14 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageManager;
+import android.graphics.Color;
 import android.graphics.PixelFormat;
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
+import android.media.AudioManager;
+import android.media.ToneGenerator;
 import android.os.AsyncTask;
 import android.os.BatteryManager;
 import android.os.Build;
@@ -27,8 +33,12 @@ import android.os.Handler;
 import android.os.IBinder;
 
 import androidx.annotation.Nullable;
+import androidx.core.app.NotificationCompat;
+import androidx.core.app.NotificationManagerCompat;
 import androidx.core.view.KeyEventDispatcher;
 
+import android.os.VibrationEffect;
+import android.os.Vibrator;
 import android.text.Editable;
 import android.text.method.KeyListener;
 import android.util.Log;
@@ -76,6 +86,7 @@ import static iitg.vedinkaksa.Constants.engagement;
 import static iitg.vedinkaksa.Constants.involvement;
 import static iitg.vedinkaksa.Constants.mental_state;
 import static iitg.vedinkaksa.Constants.student_id;
+import static iitg.vedinkaksa.Constants.teacher;
 import static iitg.vedinkaksa.Constants.valence;
 import static iitg.vedinkaksa.Constants.visualisation_state;
 
@@ -162,6 +173,16 @@ public class service extends Service implements View.OnTouchListener, SensorEven
     int count = 0;
     int counter = 0;
 
+    //new lines for variables for alert
+    public static String id = "My_channel";
+    int notificationID = 1;
+    final static int INTERVAL = 1000; // 1000=1sec
+    static Vibrator vibrator;
+    int s1_count = 0, s2_count =0 , s3_count=0, s4_count=0;
+    int consecutive_alert=0;
+
+
+
     private WindowManager mWindowManager;
     // linear layout will use to detect touch event
     private LinearLayout touchLayout;
@@ -213,6 +234,7 @@ public class service extends Service implements View.OnTouchListener, SensorEven
         params.gravity = Gravity.LEFT | Gravity.TOP;
         touchLayout.setOnTouchListener(this);
 
+
         // start sending the sensor and event data of the device to the server for state calculation
         startTouchService();
         startTypeService();
@@ -246,7 +268,98 @@ public class service extends Service implements View.OnTouchListener, SensorEven
         }
 
         registerSensors();
+        vibrator = (Vibrator) getSystemService(VIBRATOR_SERVICE);
+      //  Createchannel();
     }
+
+   // function for alert
+
+    void BigNoti() {
+        Log.i("main", "Big notification");
+        Intent viewIntent = new Intent(this, Bignoti.class);
+        viewIntent.putExtra("NotiID", "Notification ID is " + notificationID);
+
+        PendingIntent viewPendingIntent =
+                PendingIntent.getActivity(this, 0, viewIntent, 0);
+
+        NotificationCompat.Action.WearableExtender inlineActionForWear2 =
+                new NotificationCompat.Action.WearableExtender()
+                        .setHintDisplayActionInline(true)
+                        .setHintLaunchesActivity(true);
+        NotificationCompat.Action bignotiaction =
+                new NotificationCompat.Action.Builder(
+                        R.drawable.ic_action_time,
+                        "Tap to watch on mobile",
+                        viewPendingIntent)
+                        .extend(inlineActionForWear2)
+                        .build();
+        NotificationCompat.Builder notificationBuilder =
+                new NotificationCompat.Builder(this, id)
+                        .setSmallIcon(R.drawable.ic_launcher)
+                        .setContentTitle("Big Noti")
+                        .setContentText("This notification contain big text please click to view on mobile........")
+                        .setChannelId(id)
+                        .addAction(bignotiaction);
+        NotificationManagerCompat notificationManager =
+                NotificationManagerCompat.from(this);
+        notificationManager.notify(notificationID, notificationBuilder.build());
+        notificationID++;
+
+    }
+    void sendvibration()
+    {
+        if (Build.VERSION.SDK_INT >= 26) {
+            vibrator.vibrate(VibrationEffect.createOneShot(3000, VibrationEffect.DEFAULT_AMPLITUDE));
+        } else {
+            vibrator.vibrate(3000);
+        }
+    }
+    void flickerr()
+    {
+        Intent intent = new Intent(this, Flicker.class);
+        startActivity(intent);
+    }
+    void SimpleNoti() {
+        Intent viewIntent = new Intent(this, Simplenoti.class);
+        // viewIntent.putExtra("NotiID :", "Notification ID is " + notificationID);
+        viewIntent.putExtra("hello","hellllllllo");
+        PendingIntent viewPendingIntent =
+                PendingIntent.getActivity(this, 0, viewIntent, 0);
+        ToneGenerator toneG = new ToneGenerator(AudioManager.STREAM_ALARM, 100);
+        toneG.startTone(ToneGenerator.TONE_CDMA_ALERT_CALL_GUARD, 400);
+        NotificationCompat.Builder notificationBuilder =
+                new NotificationCompat.Builder(this, id)
+                        .setSmallIcon(R.drawable.ic_launcher)
+                        .setContentTitle("VedinKaksha NOTI")
+                        .setContentText("Please focus on class")
+                        .setChannelId(id)
+                        .setPriority(NotificationCompat.PRIORITY_DEFAULT);
+        NotificationManagerCompat notificationManager =
+                NotificationManagerCompat.from(this);
+        notificationManager.notify(notificationID, notificationBuilder.build());
+        notificationID++;
+    }
+
+
+    private void Createchannel() {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            NotificationManager nm = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
+            NotificationChannel mChannel = new NotificationChannel(id,
+                    "My_channel",
+                    NotificationManager.IMPORTANCE_DEFAULT);
+            mChannel.setDescription("this is a test channel");
+            mChannel.enableLights(true);
+            mChannel.setLightColor(Color.RED);
+            mChannel.enableVibration(true);
+            mChannel.setShowBadge(true);
+            mChannel.setVibrationPattern(new long[]{100, 200, 300, 400, 500, 400, 300, 200, 400});
+            nm.createNotificationChannel(mChannel);
+
+        }
+    }
+
+    // end of function of alert
+
 
     // Return the total ram being used
     private double getTotalRAM() {
@@ -429,10 +542,6 @@ public class service extends Service implements View.OnTouchListener, SensorEven
 
     // send the current mental and visualisation states of the student to the server
     public void stateRequest() {
-        if(student_id == null || student_id.equals("")){
-            // Do not send stats for teacher
-            return;
-        }
         if (requestQueue == null) {
             requestQueue = Volley.newRequestQueue(this);
         }
@@ -580,11 +689,55 @@ public class service extends Service implements View.OnTouchListener, SensorEven
 
     // start sending the mental and visualisation states of the user to the server at regular intervals
     public void startStateService() {
-        if (stateRunnable == null) {
+        if (stateRunnable == null && teacher == false) {
             stateRunnable = new Runnable() {
                 @Override
                 public void run() {
                     updateState();
+
+                    //function call for autoalerts to student
+
+                    if(visualisation_state==1)s1_count++;
+                    if(visualisation_state==2)s2_count++;
+                    if(visualisation_state==3)s3_count ++;
+                    if(visualisation_state==4)s4_count++;
+
+                    int tot = s1_count + s2_count + s3_count + s4_count;
+                    //Log.d("tot_out", String.valueOf(tot));
+                    if(tot>=40)
+                    {
+                      //  Log.d("tot_in", String.valueOf(tot));
+                        Log.d("consecutive_alerts  ", String.valueOf(consecutive_alert));
+                        tot=0;
+                        if(consecutive_alert>=3)
+                        {
+                            if(s1_count+s2_count>4 && teacher == false) {
+                                consecutive_alert = 0;
+                                sendvibration();
+                                flickerr();
+                                BigNoti();
+                            }
+
+                        }else
+                        {
+                            if(s1_count+s2_count>4 && teacher == false)
+                            {
+                                SimpleNoti();
+                                consecutive_alert++;
+                            }
+                            else
+                            {
+                                consecutive_alert=0;
+                            }
+                        }
+                        s1_count=0;
+                        s2_count=0;
+                        s3_count=0;
+                        s4_count=0;
+
+                    }
+
+                   Log.d("teacher value", String.valueOf(teacher));
                     stateRequest();
                     handler.postDelayed(this, 7000);
                 }
