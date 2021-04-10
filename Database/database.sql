@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Apr 09, 2021 at 09:06 AM
+-- Generation Time: Apr 10, 2021 at 10:29 AM
 -- Server version: 10.5.9-MariaDB-1
 -- PHP Version: 7.4.15
 
@@ -20,6 +20,7 @@ SET time_zone = "+00:00";
 --
 -- Database: `db_images`
 --
+DROP DATABASE IF EXISTS `db_images`;
 CREATE DATABASE IF NOT EXISTS `db_images` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
 USE `db_images`;
 
@@ -30,7 +31,7 @@ USE `db_images`;
 --
 
 DROP TABLE IF EXISTS `001`;
-CREATE TABLE IF NOT EXISTS `001` (
+CREATE TABLE `001` (
   `Timestamp` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   `Mental_State` text NOT NULL,
   `Visualization_State` text NOT NULL,
@@ -46,7 +47,7 @@ CREATE TABLE IF NOT EXISTS `001` (
 --
 
 DROP TABLE IF EXISTS `160101071`;
-CREATE TABLE IF NOT EXISTS `160101071` (
+CREATE TABLE `160101071` (
   `Time` datetime NOT NULL,
   `Mental_State` text NOT NULL,
   `Derived_State` text NOT NULL,
@@ -60,7 +61,7 @@ CREATE TABLE IF NOT EXISTS `160101071` (
 --
 
 DROP TABLE IF EXISTS `attendance_records`;
-CREATE TABLE IF NOT EXISTS `attendance_records` (
+CREATE TABLE `attendance_records` (
   `username` varchar(20) NOT NULL,
   `attendance_time` timestamp NOT NULL DEFAULT current_timestamp(),
   `class` varchar(8) NOT NULL
@@ -80,7 +81,7 @@ INSERT INTO `attendance_records` (`username`, `attendance_time`, `class`) VALUES
 --
 
 DROP TABLE IF EXISTS `attendance_status`;
-CREATE TABLE IF NOT EXISTS `attendance_status` (
+CREATE TABLE `attendance_status` (
   `status` varchar(8) NOT NULL DEFAULT 'false',
   `class` varchar(8) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -99,13 +100,12 @@ INSERT INTO `attendance_status` (`status`, `class`) VALUES
 --
 
 DROP TABLE IF EXISTS `images`;
-CREATE TABLE IF NOT EXISTS `images` (
+CREATE TABLE `images` (
   `id` varchar(255) NOT NULL,
   `url` text NOT NULL,
   `name` text NOT NULL,
   `roll` varchar(50) NOT NULL,
-  `pass` text NOT NULL,
-  PRIMARY KEY (`roll`)
+  `pass` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -133,15 +133,14 @@ INSERT INTO `images` (`id`, `url`, `name`, `roll`, `pass`) VALUES
 --
 
 DROP TABLE IF EXISTS `image_tbl`;
-CREATE TABLE IF NOT EXISTS `image_tbl` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `image_tbl` (
+  `id` int(11) NOT NULL,
   `roll` text NOT NULL,
   `image_url` text NOT NULL,
   `PosX` int(11) NOT NULL,
   `PosY` int(11) NOT NULL,
-  `State_in` text NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=201 DEFAULT CHARSET=latin1;
+  `State_in` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `image_tbl`
@@ -356,8 +355,8 @@ INSERT INTO `image_tbl` (`id`, `roll`, `image_url`, `PosX`, `PosY`, `State_in`) 
 --
 
 DROP TABLE IF EXISTS `queries`;
-CREATE TABLE IF NOT EXISTS `queries` (
-  `q_id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `queries` (
+  `q_id` int(11) NOT NULL,
   `query` text NOT NULL,
   `page` int(11) NOT NULL,
   `slide` text NOT NULL,
@@ -365,8 +364,7 @@ CREATE TABLE IF NOT EXISTS `queries` (
   `timestamp` timestamp NOT NULL DEFAULT current_timestamp(),
   `is_answered` int(11) NOT NULL DEFAULT 0,
   `answer` text DEFAULT NULL,
-  `answer_added` timestamp NOT NULL DEFAULT current_timestamp(),
-  PRIMARY KEY (`q_id`)
+  `answer_added` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -376,7 +374,7 @@ CREATE TABLE IF NOT EXISTS `queries` (
 --
 
 DROP TABLE IF EXISTS `Seat_arrangement`;
-CREATE TABLE IF NOT EXISTS `Seat_arrangement` (
+CREATE TABLE `Seat_arrangement` (
   `student_id` varchar(10) NOT NULL,
   `seat_row` int(11) NOT NULL,
   `seat_column` int(11) NOT NULL
@@ -405,12 +403,11 @@ INSERT INTO `Seat_arrangement` (`student_id`, `seat_row`, `seat_column`) VALUES
 --
 
 DROP TABLE IF EXISTS `slides`;
-CREATE TABLE IF NOT EXISTS `slides` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `slides` (
+  `id` int(11) NOT NULL,
   `path` text NOT NULL,
-  `name` text NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=37 DEFAULT CHARSET=latin1;
+  `name` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `slides`
@@ -446,7 +443,7 @@ INSERT INTO `slides` (`id`, `path`, `name`) VALUES
 --
 
 DROP TABLE IF EXISTS `slide_sync`;
-CREATE TABLE IF NOT EXISTS `slide_sync` (
+CREATE TABLE `slide_sync` (
   `name` varchar(20) NOT NULL,
   `page` int(11) DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -465,7 +462,7 @@ INSERT INTO `slide_sync` (`name`, `page`) VALUES
 --
 
 DROP TABLE IF EXISTS `State_Calc`;
-CREATE TABLE IF NOT EXISTS `State_Calc` (
+CREATE TABLE `State_Calc` (
   `timestamp` datetime NOT NULL,
   `roll` varchar(50) NOT NULL,
   `involvement` int(11) NOT NULL,
@@ -473,8 +470,7 @@ CREATE TABLE IF NOT EXISTS `State_Calc` (
   `Valence` int(11) NOT NULL,
   `Arousal_Valence_state` int(11) NOT NULL,
   `Classroom_Activity_State` int(11) NOT NULL,
-  `Mental_State` text NOT NULL,
-  PRIMARY KEY (`roll`)
+  `Mental_State` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -491,7 +487,7 @@ INSERT INTO `State_Calc` (`timestamp`, `roll`, `involvement`, `Arousal`, `Valenc
 --
 
 DROP TABLE IF EXISTS `teacher`;
-CREATE TABLE IF NOT EXISTS `teacher` (
+CREATE TABLE `teacher` (
   `Timestamp` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   `AlertType` int(11) NOT NULL,
   `Alert_count_not_engaged` int(11) NOT NULL,
@@ -505,7 +501,7 @@ CREATE TABLE IF NOT EXISTS `teacher` (
 --
 
 DROP TABLE IF EXISTS `temp_states`;
-CREATE TABLE IF NOT EXISTS `temp_states` (
+CREATE TABLE `temp_states` (
   `student_id` varchar(10) NOT NULL,
   `timestamp` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   `Involvement` int(11) NOT NULL,
@@ -664,12 +660,120 @@ INSERT INTO `temp_states` (`student_id`, `timestamp`, `Involvement`, `Activity`,
 --
 
 DROP TABLE IF EXISTS `Visualisation_States`;
-CREATE TABLE IF NOT EXISTS `Visualisation_States` (
+CREATE TABLE `Visualisation_States` (
   `timestamp` datetime NOT NULL,
   `roll` text NOT NULL,
   `Derived_States` int(11) NOT NULL,
   `Alert` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `images`
+--
+ALTER TABLE `images`
+  ADD PRIMARY KEY (`roll`);
+
+--
+-- Indexes for table `image_tbl`
+--
+ALTER TABLE `image_tbl`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `queries`
+--
+ALTER TABLE `queries`
+  ADD PRIMARY KEY (`q_id`);
+
+--
+-- Indexes for table `slides`
+--
+ALTER TABLE `slides`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `State_Calc`
+--
+ALTER TABLE `State_Calc`
+  ADD PRIMARY KEY (`roll`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `image_tbl`
+--
+ALTER TABLE `image_tbl`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=201;
+
+--
+-- AUTO_INCREMENT for table `queries`
+--
+ALTER TABLE `queries`
+  MODIFY `q_id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `slides`
+--
+ALTER TABLE `slides`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
+--
+-- Database: `quiz`
+--
+DROP DATABASE IF EXISTS `quiz`;
+CREATE DATABASE IF NOT EXISTS `quiz` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
+USE `quiz`;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `quiz_questions`
+--
+
+DROP TABLE IF EXISTS `quiz_questions`;
+CREATE TABLE `quiz_questions` (
+  `id` int(11) NOT NULL,
+  `question` varchar(111) NOT NULL,
+  `option1` varchar(100) NOT NULL,
+  `option2` varchar(100) NOT NULL,
+  `option3` varchar(100) NOT NULL,
+  `option4` varchar(100) NOT NULL,
+  `correct_answer` varchar(5) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `quiz_questions`
+--
+
+INSERT INTO `quiz_questions` (`id`, `question`, `option1`, `option2`, `option3`, `option4`, `correct_answer`) VALUES
+(37, 'hi', 'oo', 'ii', 'yy', 'ss', '1'),
+(38, 'Who was the first president of India?', 'Pt. JawaharLal Nehru', 'Sardar Vallabhbhai Patel ', 'Dr. Rajendra Prasad', 'Mahatma Gandhi', '3');
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `quiz_questions`
+--
+ALTER TABLE `quiz_questions`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `question` (`question`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `quiz_questions`
+--
+ALTER TABLE `quiz_questions`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
