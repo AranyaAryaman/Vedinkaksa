@@ -80,6 +80,7 @@ import java.util.Random;
 import java.util.TimeZone;
 
 import static iitg.vedinkaksa.Constants.arousal;
+import static iitg.vedinkaksa.Constants.big_message;
 import static iitg.vedinkaksa.Constants.classroom_activity;
 import static iitg.vedinkaksa.Constants.emotional_state;
 import static iitg.vedinkaksa.Constants.engagement;
@@ -274,38 +275,6 @@ public class service extends Service implements View.OnTouchListener, SensorEven
 
    // function for alert
 
-    void BigNoti() {
-        Log.i("main", "Big notification");
-        Intent viewIntent = new Intent(this, Bignoti.class);
-        viewIntent.putExtra("NotiID", "Notification ID is " + notificationID);
-
-        PendingIntent viewPendingIntent =
-                PendingIntent.getActivity(this, 0, viewIntent, 0);
-
-        NotificationCompat.Action.WearableExtender inlineActionForWear2 =
-                new NotificationCompat.Action.WearableExtender()
-                        .setHintDisplayActionInline(true)
-                        .setHintLaunchesActivity(true);
-        NotificationCompat.Action bignotiaction =
-                new NotificationCompat.Action.Builder(
-                        R.drawable.ic_action_time,
-                        "Tap to watch on mobile",
-                        viewPendingIntent)
-                        .extend(inlineActionForWear2)
-                        .build();
-        NotificationCompat.Builder notificationBuilder =
-                new NotificationCompat.Builder(this, id)
-                        .setSmallIcon(R.drawable.ic_launcher)
-                        .setContentTitle("Big Noti")
-                        .setContentText("This notification contain big text please click to view on mobile........")
-                        .setChannelId(id)
-                        .addAction(bignotiaction);
-        NotificationManagerCompat notificationManager =
-                NotificationManagerCompat.from(this);
-        notificationManager.notify(notificationID, notificationBuilder.build());
-        notificationID++;
-
-    }
     void sendvibration()
     {
         if (Build.VERSION.SDK_INT >= 26) {
@@ -322,15 +291,15 @@ public class service extends Service implements View.OnTouchListener, SensorEven
     void SimpleNoti() {
         Intent viewIntent = new Intent(this, Simplenoti.class);
         // viewIntent.putExtra("NotiID :", "Notification ID is " + notificationID);
-        viewIntent.putExtra("hello","hellllllllo");
+        viewIntent.putExtra("simple","notification, put string value as needed here");
         PendingIntent viewPendingIntent =
                 PendingIntent.getActivity(this, 0, viewIntent, 0);
         ToneGenerator toneG = new ToneGenerator(AudioManager.STREAM_ALARM, 100);
         toneG.startTone(ToneGenerator.TONE_CDMA_ALERT_CALL_GUARD, 400);
         NotificationCompat.Builder notificationBuilder =
                 new NotificationCompat.Builder(this, id)
-                        .setSmallIcon(R.drawable.ic_launcher)
-                        .setContentTitle("VedinKaksha NOTI")
+                        .setSmallIcon(R.drawable.ic_launcher2)
+                        .setContentTitle("VedinKaksha")
                         .setContentText("Please focus on class")
                         .setChannelId(id)
                         .setPriority(NotificationCompat.PRIORITY_DEFAULT);
@@ -341,22 +310,7 @@ public class service extends Service implements View.OnTouchListener, SensorEven
     }
 
 
-    private void Createchannel() {
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-            NotificationManager nm = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
-            NotificationChannel mChannel = new NotificationChannel(id,
-                    "My_channel",
-                    NotificationManager.IMPORTANCE_DEFAULT);
-            mChannel.setDescription("this is a test channel");
-            mChannel.enableLights(true);
-            mChannel.setLightColor(Color.RED);
-            mChannel.enableVibration(true);
-            mChannel.setShowBadge(true);
-            mChannel.setVibrationPattern(new long[]{100, 200, 300, 400, 500, 400, 300, 200, 400});
-            nm.createNotificationChannel(mChannel);
 
-        }
-    }
 
     // end of function of alert
 
@@ -689,7 +643,7 @@ public class service extends Service implements View.OnTouchListener, SensorEven
 
     // start sending the mental and visualisation states of the user to the server at regular intervals
     public void startStateService() {
-        if (stateRunnable == null && teacher == false) {
+        if (stateRunnable == null) {
             stateRunnable = new Runnable() {
                 @Override
                 public void run() {
@@ -703,26 +657,30 @@ public class service extends Service implements View.OnTouchListener, SensorEven
                     if(visualisation_state==4)s4_count++;
 
                     int tot = s1_count + s2_count + s3_count + s4_count;
-                    //Log.d("tot_out", String.valueOf(tot));
-                    if(tot>=40)
+                    Log.d("tot_out", String.valueOf(tot));
+
+                    // condition for generating alert to student is atleast 9 to 10 minutes
+                    // and most of the time the student is not engaged
+                    if(tot>=80)
                     {
-                      //  Log.d("tot_in", String.valueOf(tot));
+                       Log.d("tot_in", String.valueOf(tot));
                         Log.d("consecutive_alerts  ", String.valueOf(consecutive_alert));
                         tot=0;
                         if(consecutive_alert>=3)
                         {
-                            if(s1_count+s2_count>4 && teacher == false) {
+                            if(s1_count+s2_count>40 && teacher == false) {
                                 consecutive_alert = 0;
                                 sendvibration();
                                 flickerr();
-                                BigNoti();
+                                //BigNoti();
                             }
 
                         }else
                         {
-                            if(s1_count+s2_count>4 && teacher == false)
+                            if(s1_count+s2_count>40 && teacher == false)
                             {
                                 SimpleNoti();
+                               // BigNoti();
                                 consecutive_alert++;
                             }
                             else
