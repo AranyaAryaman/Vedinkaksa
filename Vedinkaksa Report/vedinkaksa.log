@@ -1,0 +1,330 @@
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2021.4.12)  12 APR 2021 23:12
+entering extended mode
+ restricted \write18 enabled.
+ %&-line parsing enabled.
+**vedinkaksa.tex
+(./vedinkaksa.tex
+LaTeX2e <2020-02-02> patch level 2
+L3 programming layer <2020-02-14>
+(/usr/share/texlive/texmf-dist/tex/latex/base/report.cls
+Document Class: report 2019/12/20 v1.4l Standard LaTeX document class
+(/usr/share/texlive/texmf-dist/tex/latex/base/size10.clo
+File: size10.clo 2019/12/20 v1.4l Standard LaTeX file (size option)
+)
+\c@part=\count167
+\c@chapter=\count168
+\c@section=\count169
+\c@subsection=\count170
+\c@subsubsection=\count171
+\c@paragraph=\count172
+\c@subparagraph=\count173
+\c@figure=\count174
+\c@table=\count175
+\abovecaptionskip=\skip47
+\belowcaptionskip=\skip48
+\bibindent=\dimen134
+)
+(/usr/share/texlive/texmf-dist/tex/latex/preprint/fullpage.sty
+Package: fullpage 1999/02/23 1.1 (PWD)
+\FP@margin=\skip49
+)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 2019/11/30 v1.2a Enhanced LaTeX Graphics (DPC,SPQR)
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
+\KV@toks@=\toks14
+)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2019/11/30 v1.4a Standard LaTeX Graphics (DPC,SPQR)
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/trig.sty
+Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
+)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+)
+Package graphics Info: Driver file: pdftex.def on input line 105.
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-def/pdftex.def
+File: pdftex.def 2018/01/08 v1.0l Graphics/color driver for pdftex
+))
+\Gin@req@height=\dimen135
+\Gin@req@width=\dimen136
+)
+(/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-pdfmode.def
+File: l3backend-pdfmode.def 2020-02-03 L3 backend support: PDF mode
+\l__kernel_color_stack_int=\count176
+\l__pdf_internal_box=\box45
+)
+(./vedinkaksa.aux)
+\openout1 = `vedinkaksa.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 15.
+LaTeX Font Info:    ... okay on input line 15.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 15.
+LaTeX Font Info:    ... okay on input line 15.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 15.
+LaTeX Font Info:    ... okay on input line 15.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 15.
+LaTeX Font Info:    ... okay on input line 15.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 15.
+LaTeX Font Info:    ... okay on input line 15.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 15.
+LaTeX Font Info:    ... okay on input line 15.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 15.
+LaTeX Font Info:    ... okay on input line 15.
+
+(/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count177
+\scratchdimen=\dimen137
+\scratchbox=\box46
+\nofMPsegments=\count178
+\nofMParguments=\count179
+\everyMPshowfont=\toks15
+\MPscratchCnt=\count180
+\MPscratchDim=\dimen138
+\MPnumerator=\count181
+\makeMPintoPDFobject=\count182
+\everyMPtoPDFconversion=\toks16
+) (/usr/share/texlive/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
+Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
+85.
+
+(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
+e
+))
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <12> on input line 17.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <8> on input line 17.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <6> on input line 17.
+<iitg.png, id=1, 903.375pt x 474.27188pt>
+File: iitg.png Graphic file (type png)
+<use iitg.png>
+Package pdftex.def Info: iitg.png  used on input line 17.
+(pdftex.def)             Requested size: 227.62204pt x 119.50122pt.
+
+[1
+
+] [2{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} <./iitg.png>]
+(./vedinkaksa.toc
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <7> on input line 2.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <5> on input line 2.
+ [1
+
+])
+\tf@toc=\write3
+\openout3 = `vedinkaksa.toc'.
+
+ [2]
+Chapter 1.
+[3
+
+] [4]
+Chapter 2.
+[5
+
+] [6]
+Chapter 3.
+<toplevel.jpeg, id=37, 723.70375pt x 743.77875pt>
+File: toplevel.jpeg Graphic file (type jpg)
+<use toplevel.jpeg>
+Package pdftex.def Info: toplevel.jpeg  used on input line 39.
+(pdftex.def)             Requested size: 469.75502pt x 482.7922pt.
+[7
+
+]
+Overfull \vbox (69.74721pt too high) has occurred while \output is active []
+
+
+[8 <./toplevel.jpeg>]
+<LoginModule.jpg, id=44, 653.44125pt x 270.00874pt>
+File: LoginModule.jpg Graphic file (type jpg)
+<use LoginModule.jpg>
+Package pdftex.def Info: LoginModule.jpg  used on input line 43.
+(pdftex.def)             Requested size: 469.75502pt x 194.10538pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 42--44
+
+ []
+
+<LiveClassroom.png, id=45, 432.61626pt x 342.27875pt>
+File: LiveClassroom.png Graphic file (type png)
+<use LiveClassroom.png>
+Package pdftex.def Info: LiveClassroom.png  used on input line 47.
+(pdftex.def)             Requested size: 469.75502pt x 371.67673pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 45--48
+
+ []
+
+[9 <./LoginModule.jpg>]
+<QuerySynchronization.png, id=49, 543.02875pt x 362.35374pt>
+File: QuerySynchronization.png Graphic file (type png)
+<use QuerySynchronization.png>
+Package pdftex.def Info: QuerySynchronization.png  used on input line 51.
+(pdftex.def)             Requested size: 469.75502pt x 313.47038pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 50--51
+
+ []
+
+[10 <./LiveClassroom.png>] [11 <./QuerySynchronization.png>]
+<QuizModule.png, id=59, 522.95375pt x 362.35374pt>
+File: QuizModule.png Graphic file (type png)
+<use QuizModule.png>
+Package pdftex.def Info: QuizModule.png  used on input line 54.
+(pdftex.def)             Requested size: 469.75502pt x 325.50163pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 53--54
+
+ []
+
+[12 <./QuizModule.png>]
+<VisualizationModule.png, id=64, 482.80376pt x 402.50375pt>
+File: VisualizationModule.png Graphic file (type png)
+<use VisualizationModule.png>
+Package pdftex.def Info: VisualizationModule.png  used on input line 57.
+(pdftex.def)             Requested size: 469.75502pt x 391.63808pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 56--58
+
+ []
+
+<attendance.jpeg, id=65, 603.25375pt x 353.32pt>
+File: attendance.jpeg Graphic file (type jpg)
+<use attendance.jpeg>
+Package pdftex.def Info: attendance.jpeg  used on input line 60.
+(pdftex.def)             Requested size: 469.75502pt x 275.13023pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 59--60
+
+ []
+
+[13 <./VisualizationModule.png>] [14 <./attendance.jpeg>]
+<assignments.jpeg, id=73, 603.25375pt x 343.2825pt>
+File: assignments.jpeg Graphic file (type jpg)
+<use assignments.jpeg>
+Package pdftex.def Info: assignments.jpeg  used on input line 63.
+(pdftex.def)             Requested size: 469.75502pt x 267.31403pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 62--64
+
+ []
+
+[15 <./assignments.jpeg>]
+Chapter 4.
+
+Underfull \hbox (badness 10000) in paragraph at lines 77--80
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 77--80
+
+ []
+
+[16
+
+] [17] [18] [19]
+Chapter 5.
+[20
+
+] [21]
+LaTeX Font Info:    Trying to load font information for OMS+cmr on input line 1
+67.
+ (/usr/share/texlive/texmf-dist/tex/latex/base/omscmr.fd
+File: omscmr.fd 2019/12/16 v2.5j Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 167.
+
+Underfull \hbox (badness 10000) in paragraph at lines 162--172
+
+ []
+
+[22] [23]
+Overfull \hbox (0.94035pt too wide) in paragraph at lines 207--208
+[]\OT1/cmr/m/n/10 CREATE USER 'nikhil'@'localhost' IDEN-TI-FIED WITH caching[]s
+ha2[]password BY '160101047'; 
+ []
+
+[24] [25]
+Underfull \hbox (badness 10000) in paragraph at lines 244--247
+
+ []
+
+[26]
+Overfull \hbox (55.42818pt too wide) in paragraph at lines 252--253
+[]\OT1/cmr/m/n/10 Replace the IP in the server field with your server[]ip, in t
+he Con-stants.java file (java/iitg/vedinkaksa/Constants.java)
+ []
+
+[27]
+Underfull \hbox (badness 10000) in paragraph at lines 261--266
+
+ []
+
+
+Overfull \hbox (4.71805pt too wide) in paragraph at lines 261--266
+\OT1/cmr/m/n/10 There are dif-fer-ent func-tions cor-re-spond-ing to each model
+ in the Code (in mod-els/classifier/classifier/main.py).
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 261--266
+
+ []
+
+[28]
+Chapter 6.
+
+Underfull \hbox (badness 10000) in paragraph at lines 268--269
+
+ []
+
+[29
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 272--275
+
+ []
+
+[30] [31
+
+] (./vedinkaksa.aux)
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+ ) 
+Here is how much of TeX's memory you used:
+ 1298 strings out of 481239
+ 19188 string characters out of 5920377
+ 253426 words of memory out of 5000000
+ 16578 multiletter control sequences out of 15000+600000
+ 539487 words of font info for 47 fonts, out of 8000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 30i,10n,25p,914b,302s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-ts1.enc}</usr/share/texli
+ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/tex
+mf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dis
+t/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts
+/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/
+public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/
+amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfon
+ts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/
+cmti12.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1000.pfb>
+Output written on vedinkaksa.pdf (33 pages, 415381 bytes).
+PDF statistics:
+ 163 PDF objects out of 1000 (max. 8388607)
+ 103 compressed objects within 2 object streams
+ 0 named destinations out of 1000 (max. 500000)
+ 46 words of extra memory for PDF output out of 10000 (max. 10000000)
+
