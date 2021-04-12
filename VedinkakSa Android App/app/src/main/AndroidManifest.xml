@@ -27,6 +27,7 @@
 		android:theme="@style/AppTheme"
 
 		tools:ignore="GoogleAppIndexingWarning">
+		<activity android:name=".TeacherAssignment"></activity>
 		<!-- <activity android:name=".GetEvents" /> -->
 		<!-- <activity android:name=".AnswerGive" /> -->
 		<!-- <activity android:name=".StudentQuizResult" /> -->
@@ -78,6 +79,7 @@
 		<activity android:name=".LoginActivity">
 			<intent-filter>
 				<action android:name="android.intent.action.MAIN" />
+
 				<category android:name="android.intent.category.LAUNCHER" />
 			</intent-filter>
 		</activity>

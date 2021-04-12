@@ -75,4 +75,5 @@ Developed for: Affective Computing Team, IIT-Guwahati for development of vedinka
 	<string name="start_attendance">Start Attendance</string>
 	<string name="use_the_button_below_to_toggle_attendance_recording">Use the button below to toggle attendance recording</string>
 	<string name="stop_attendance">Stop Attendance</string>
+	<string name="assignment_submission">Assignments</string>
 </resources>

@@ -116,4 +116,7 @@ public class TeacherActivity extends Activity1 {
         startActivity(new Intent(this, LoginActivity.class));
     }
 
+    public void teacherassignsubmit(View view) {
+        startActivity((new Intent(this, TeacherAssignment.class)));
+    }
 }

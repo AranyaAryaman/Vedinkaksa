@@ -178,6 +178,35 @@ Developed for: Affective Computing Team, IIT-Guwahati for development of vedinka
                         android:textStyle="bold" />
 
                 </RelativeLayout>
+                <!-- Relative Layout holding the option of Assignment -->
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="110dp"
+                        android:background="@drawable/examinations"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/examinations" />
+
+                    <Button
+                        android:id="@+id/teacherassignsubmit"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_centerVertical="true"
+                        android:background="@android:color/transparent"
+                        android:gravity="center_vertical"
+                        android:onClick="teacherassignsubmit"
+                        android:text="@string/assignment_submission"
+                        android:textAlignment="center"
+                        android:textColor="#ffffff"
+                        android:textSize="30sp"
+                        android:textStyle="bold" />
+
+                </RelativeLayout>
                 <!-- Relative Layout holding the option of Result -->
                 <RelativeLayout
                     android:layout_width="match_parent"
