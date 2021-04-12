@@ -1,0 +1,33 @@
+\contentsline {chapter}{\numberline {1}Overview}{}%
+\contentsline {section}{\numberline {1.1}About Vedinkaksa}{}%
+\contentsline {section}{\numberline {1.2}Goal of the Project}{}%
+\contentsline {section}{\numberline {1.3}Introduction to the Report}{}%
+\contentsline {chapter}{\numberline {2}Prior Works \& Challenges}{}%
+\contentsline {section}{\numberline {2.1}Prior Works}{}%
+\contentsline {section}{\numberline {2.2}Challenges}{}%
+\contentsline {chapter}{\numberline {3}System Design}{}%
+\contentsline {paragraph}{As explained in the previous chapter, the entire project can be divided into three parts, 1) An Android Application which acts as the interface, 2) Supporting Backend Scripts \& 3) Emotion AI Models to classify the learners' state. Understanding the entire system is tedious by individually reading either of these parts since all the parts run in sync. Understanding the system from the User Interface POV is easier since the end-user can identify the different components. From a UI perspective, the entire system can be divided into seven different modules. In this chapter, we will try to explain each module using their Data Flow Diagram to ease in the understanding of how the three parts work together in sync.}{}%
+\contentsline {section}{\numberline {3.1}User Registration \& Authentication Module}{}%
+\contentsline {section}{\numberline {3.2}Virtual Classroom Module}{}%
+\contentsline {section}{\numberline {3.3}Live Discussion Module}{}%
+\contentsline {section}{\numberline {3.4}Examination Module}{}%
+\contentsline {section}{\numberline {3.5}Visualization Module}{}%
+\contentsline {section}{\numberline {3.6}Attendance Module}{}%
+\contentsline {section}{\numberline {3.7}Assignments Module}{}%
+\contentsline {chapter}{\numberline {4}Contribution of the Authors}{}%
+\contentsline {section}{\numberline {4.1}Introduction}{}%
+\contentsline {section}{\numberline {4.2}Virtual Classroom Module}{}%
+\contentsline {section}{\numberline {4.3}Visualization Module}{}%
+\contentsline {section}{\numberline {4.4}Assignments Module}{}%
+\contentsline {section}{\numberline {4.5}Attendance Module}{}%
+\contentsline {section}{\numberline {4.6}Documentation Writing}{}%
+\contentsline {chapter}{\numberline {5}Developers' Guide}{}%
+\contentsline {section}{\numberline {5.1}Initial Server Setup}{}%
+\contentsline {section}{\numberline {5.2}Setting up LAMP Stack}{}%
+\contentsline {section}{\numberline {5.3}Installing and Securing phpMyAdmin on Ubuntu}{}%
+\contentsline {section}{\numberline {5.4}Training the Model}{}%
+\contentsline {section}{\numberline {5.5}Installing Android Studio}{}%
+\contentsline {section}{\numberline {5.6}Deploying the Mobile Application}{}%
+\contentsline {section}{\numberline {5.7}Iterating over the Models}{}%
+\contentsline {chapter}{\numberline {6}Conclusion \& Future Works}{}%
+\contentsline {section}{\numberline {6.1}Scope of Future Works}{}%

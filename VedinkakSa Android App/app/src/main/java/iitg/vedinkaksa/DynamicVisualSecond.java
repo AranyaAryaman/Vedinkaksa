@@ -182,7 +182,7 @@ public class DynamicVisualSecond extends Activity {
 		Log.i("rollMap", rollMap.toString());
 		Log.i("ir", "ir: " + ir + " ic: " + ic);
 		for (int i = 0; i < ir; i++) {
-			for (int j = 0; j < ic; j++) {
+			for (int j = 0; j < ic; j++) P
 
 				String url = "";
 				if (rollMap.get((ir - 1) * i + j) == null || rollMap.get((ir - 1) * i + j).equals("")) {
