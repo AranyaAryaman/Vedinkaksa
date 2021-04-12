@@ -32,6 +32,8 @@ public class Constants {
     // TODO
     public static final String STATE = "http://" + debug + "/CoreFunctionality/Visualization/UpdateState2.php";
     public static final String GET_ALL_STATES = "http://" + debug + "/CoreFunctionality/Visualization/getAllVisualizationStates2.php";
+	public static final String SET_ASSIGNMENT_STATUS = "http://" + debug + "/CoreFunctionality/assignments/setAssignmentsStatus.php";
+    public static final String GET_ASSIGNMENT_STATUS = "http://" + debug + "/CoreFunctionality/assignments/getAssignmentsStatus.php";
 
     // Global variables
     public static int rowss, ht, abb, st, wd, coll;

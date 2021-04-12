@@ -76,4 +76,10 @@ Developed for: Affective Computing Team, IIT-Guwahati for development of vedinka
 	<string name="use_the_button_below_to_toggle_attendance_recording">Use the button below to toggle attendance recording</string>
 	<string name="stop_attendance">Stop Attendance</string>
 	<string name="assignment_submission">Assignments</string>
+	<string name="assignment_name">Assignment Name</string>
+	<string name="start_assignment_submission">Start Assignment Submission</string>
+	<string name="stop_assignment_submission">Stop Assignment Submission</string>
+	<string name="assignment_submission_is_disabled">Assignment submission is DISABLED</string>
+	<string name="assignment_submission_is_enabled">Assignment submission is ENABLED</string>
+	<string name="assignment_help_text">Enter the assignment name below and click Start button to collect assignments.</string>
 </resources>

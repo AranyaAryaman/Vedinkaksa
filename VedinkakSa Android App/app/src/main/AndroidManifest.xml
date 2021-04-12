@@ -25,10 +25,9 @@
 		android:roundIcon="@mipmap/ic_launcher_round"
 		android:supportsRtl="true"
 		android:theme="@style/AppTheme"
-
 		tools:ignore="GoogleAppIndexingWarning">
-		<activity android:name=".TeacherAssignment"></activity>
-		<!-- <activity android:name=".GetEvents" /> -->
+		<activity android:name=".StudentAssignment"></activity>
+		<activity android:name=".TeacherAssignment" /> <!-- <activity android:name=".GetEvents" /> -->
 		<!-- <activity android:name=".AnswerGive" /> -->
 		<!-- <activity android:name=".StudentQuizResult" /> -->
 		<!-- <activity android:name=".StudentClassroom" /> -->
