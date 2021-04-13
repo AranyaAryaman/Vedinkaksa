@@ -6,4 +6,40 @@
 	android:layout_height="match_parent"
 	tools:context=".StudentAssignment">
 
+	<TextView
+		android:id="@+id/textView"
+		android:layout_marginLeft="20dp"
+		android:layout_marginRight="20dp"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_marginTop="100dp"
+		android:textSize="20sp"
+		android:textAlignment="center"
+		android:text="@string/assignments_help_student"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toTopOf="parent" />
+
+	<Button
+		android:id="@+id/assignmentSubmitButton"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_marginTop="100dp"
+		android:text="@string/submit_assignment"
+		android:onClick="submit_assignment"
+		android:enabled="false"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+	<TextView
+		android:id="@+id/assignmentStatusView"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_marginTop="0dp"
+		android:text="@string/assignment_submission_is_disabled"
+		android:textColor="#ff0000"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toBottomOf="@+id/assignmentSubmitButton" />
 </androidx.constraintlayout.widget.ConstraintLayout>

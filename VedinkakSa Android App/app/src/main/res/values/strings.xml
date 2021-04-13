@@ -82,4 +82,6 @@ Developed for: Affective Computing Team, IIT-Guwahati for development of vedinka
 	<string name="assignment_submission_is_disabled">Assignment submission is DISABLED</string>
 	<string name="assignment_submission_is_enabled">Assignment submission is ENABLED</string>
 	<string name="assignment_help_text">Enter the assignment name below and click Start button to collect assignments.</string>
+	<string name="assignments_help_student">Submit your assignments below. To edit, you can re-upload your file.</string>
+	<string name="submit_assignment">Submit Assignment</string>
 </resources>
