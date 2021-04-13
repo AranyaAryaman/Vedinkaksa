@@ -190,7 +190,7 @@ public class StudentAssignment extends AppCompatActivity {
 				PdfID = UUID.randomUUID().toString();
 				new MultipartUploadRequest(getApplicationContext(), PdfID, PDF_UPLOAD_HTTP_URL)
 						.addFileToUpload(PdfPathHolder, "pdf")
-						.addParameter("name", PdfNameHolder)
+						.addParameter("roll", Constants.student_id)
 						.setNotificationConfig(new UploadNotificationConfig())
 						.setMaxRetries(5)
 						.setAutoDeleteFilesAfterSuccessfulUpload(false)

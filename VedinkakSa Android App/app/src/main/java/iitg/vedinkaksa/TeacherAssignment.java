@@ -120,10 +120,8 @@ public class TeacherAssignment extends AppCompatActivity {
 			protected Map<String, String> getParams() {
 				Map<String, String> params = new HashMap<>();
 				if (isAssignmentStarted) {
-					params.put("assignment_status", "false");
 					params.put("assignment_name", "");
 				} else {
-					params.put("assignment_status", "true");
 					params.put("assignment_name", getAssignmentNameEditText());
 				}
 
