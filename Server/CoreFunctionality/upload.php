@@ -38,18 +38,33 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
 		$extension = $fileinfo['extension'];
 
 		//file url to store in the database
-		$file_url = $upload_url . getFileName() . '.' . $extension;
+		$file_url = $upload_url . getFileName() . '.jpg';
 
 		//file path to upload in the server
-		$file_path = $upload_path . getFileName() . '.' . $extension;
+		$file_path = $upload_path . getFileName() . '.jpg';
 
 		//trying to save the file in the directory
 		try {
 			//saving the file
-			move_uploaded_file( $_FILES['image']['tmp_name'], $file_path );
+			if ($extension == "jpg" || $extension == "jpeg" ){
+				$imagetemp = imagecreatefromjpeg($_FILES['image']['tmp_name']);
+				$valid_extension = 1;
+			} elseif ($extension == "png" ){
+				$imagetemp = imagecreatefrompng($_FILES['image']['tmp_name']);
+				$valid_extension = 1;
+			} elseif ($extension == "bmp" ){
+				$imagetemp = imagecreatefrombmp($_FILES['image']['tmp_name']);
+				$valid_extension = 1;
+			} else {
+				$valid_extension = 0;
+			}
+			if ($valid_extension == 1) {
+				imagejpeg($imagetemp, $file_path, 80);
+			} else {
+				move_uploaded_file( $_FILES['image']['tmp_name'], $file_path);
+			}
 
-			$sql =
-				"INSERT INTO images (id, url, name, roll, pass) VALUES ('$roll', '$file_url', '$name', '$roll', '$pass')";
+			$sql = "INSERT INTO images (id, url, name, roll, pass) VALUES ('$roll', '$file_url', '$name', '$roll', '$pass')";
 
 			if ( mysqli_query( $con, $sql ) ) {
 
