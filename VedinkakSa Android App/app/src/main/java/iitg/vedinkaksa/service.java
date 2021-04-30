@@ -80,7 +80,6 @@ import java.util.Random;
 import java.util.TimeZone;
 
 import static iitg.vedinkaksa.Constants.arousal;
-import static iitg.vedinkaksa.Constants.big_message;
 import static iitg.vedinkaksa.Constants.classroom_activity;
 import static iitg.vedinkaksa.Constants.emotional_state;
 import static iitg.vedinkaksa.Constants.engagement;
@@ -235,7 +234,6 @@ public class service extends Service implements View.OnTouchListener, SensorEven
         params.gravity = Gravity.LEFT | Gravity.TOP;
         touchLayout.setOnTouchListener(this);
 
-
         // start sending the sensor and event data of the device to the server for state calculation
         startTouchService();
         startTypeService();
@@ -269,11 +267,29 @@ public class service extends Service implements View.OnTouchListener, SensorEven
         }
 
         registerSensors();
+
         vibrator = (Vibrator) getSystemService(VIBRATOR_SERVICE);
-      //  Createchannel();
+        Createchannel();
     }
 
-   // function for alert
+
+    // function for alert
+    private void Createchannel() {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            NotificationManager nm = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
+            NotificationChannel mChannel = new NotificationChannel(id,
+                    "My_channel",
+                    NotificationManager.IMPORTANCE_DEFAULT);
+            mChannel.setDescription("this is a test channel");
+            mChannel.enableLights(true);
+            mChannel.setLightColor(Color.RED);
+            mChannel.enableVibration(true);
+            mChannel.setShowBadge(true);
+            mChannel.setVibrationPattern(new long[]{100, 200, 300, 400, 500, 400, 300, 200, 400});
+            nm.createNotificationChannel(mChannel);
+
+        }
+    }
 
     void sendvibration()
     {
@@ -313,7 +329,6 @@ public class service extends Service implements View.OnTouchListener, SensorEven
 
 
     // end of function of alert
-
 
     // Return the total ram being used
     private double getTotalRAM() {
@@ -496,6 +511,10 @@ public class service extends Service implements View.OnTouchListener, SensorEven
 
     // send the current mental and visualisation states of the student to the server
     public void stateRequest() {
+        if(student_id == null || student_id.equals("")){
+            // Do not send stats for teacher
+            return;
+        }
         if (requestQueue == null) {
             requestQueue = Volley.newRequestQueue(this);
         }
@@ -641,6 +660,7 @@ public class service extends Service implements View.OnTouchListener, SensorEven
         }
     }
 
+
     // start sending the mental and visualisation states of the user to the server at regular intervals
     public void startStateService() {
         if (stateRunnable == null) {
@@ -663,10 +683,10 @@ public class service extends Service implements View.OnTouchListener, SensorEven
                     // and most of the time the student is not engaged
                     if(tot>=80)
                     {
-                       Log.d("tot_in", String.valueOf(tot));
+                        Log.d("tot_in", String.valueOf(tot));
                         Log.d("consecutive_alerts  ", String.valueOf(consecutive_alert));
                         tot=0;
-                        if(consecutive_alert>=3)
+                        if(consecutive_alert>=2)
                         {
                             if(s1_count+s2_count>40 && teacher == false) {
                                 consecutive_alert = 0;
@@ -680,7 +700,7 @@ public class service extends Service implements View.OnTouchListener, SensorEven
                             if(s1_count+s2_count>40 && teacher == false)
                             {
                                 SimpleNoti();
-                               // BigNoti();
+                                // BigNoti();
                                 consecutive_alert++;
                             }
                             else
@@ -695,7 +715,7 @@ public class service extends Service implements View.OnTouchListener, SensorEven
 
                     }
 
-                   Log.d("teacher value", String.valueOf(teacher));
+                    Log.d("teacher value", String.valueOf(teacher));
                     stateRequest();
                     handler.postDelayed(this, 7000);
                 }
@@ -706,6 +726,7 @@ public class service extends Service implements View.OnTouchListener, SensorEven
             handler.postDelayed(stateRunnable, 7000);
         }
     }
+
 
     // start sending required typing data to the server (typing model) at regular intervals
     public void startTypeService() {

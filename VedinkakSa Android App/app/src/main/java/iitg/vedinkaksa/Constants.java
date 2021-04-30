@@ -32,8 +32,11 @@ public class Constants {
     // TODO
     public static final String STATE = "http://" + debug + "/CoreFunctionality/Visualization/UpdateState2.php";
     public static final String GET_ALL_STATES = "http://" + debug + "/CoreFunctionality/Visualization/getAllVisualizationStates2.php";
+	public static final String SET_ASSIGNMENT_STATUS = "http://" + debug + "/CoreFunctionality/assignments/setAssignmentsStatus.php";
+    public static final String GET_ASSIGNMENT_STATUS = "http://" + debug + "/CoreFunctionality/assignments/getAssignmentsStatus.php";
+	public static final String SUBMIT_ASSIGNMENT = "http://" + debug + "/CoreFunctionality/assignments/submitAssignment.php";
 
-    // Global variables
+	// Global variables
     public static int rowss, ht, abb, st, wd, coll;
     // rowss and coll are setup at teacher login.
     public static int sym = 0;
@@ -66,6 +69,7 @@ public class Constants {
     public static int visualisation_state = 0;
     public static int engagement = 1;
 
+    // for big message
     public static String big_message = null;
 
 }

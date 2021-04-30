@@ -7,15 +7,20 @@ package iitg.vedinkaksa;
  * Developed for: Affective Computing Team, IIT-Guwahati for development of vedinkakSa, a sensitive classroom application.
  */
 
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
 import android.app.PendingIntent;
+import android.content.Context;
 import android.content.Intent;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.NotificationCompat;
 import androidx.core.app.NotificationManagerCompat;
 
+import android.graphics.Color;
 import android.media.AudioManager;
 import android.media.ToneGenerator;
+import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.MotionEvent;
@@ -29,6 +34,7 @@ import static iitg.vedinkaksa.Constants.big_message;
 /** This activity is presenting teacher activity */
 public class TeacherActivity extends Activity1 {
     Button visu;                                                // Line 19: Added by- Abhishek Kumar for Visualisation in TeacherActivity screen
+    public static String id = "My_channel";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -61,6 +67,7 @@ public class TeacherActivity extends Activity1 {
             }
         });
 
+        Createchannel2();
         BigNoti();
     }
 
@@ -85,18 +92,36 @@ public class TeacherActivity extends Activity1 {
 
     }
 
+    // codes for initial alert for teacher
+    private void Createchannel2() {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            NotificationManager nm = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
+            NotificationChannel mChannel = new NotificationChannel(id,
+                    "My_channel",
+                    NotificationManager.IMPORTANCE_DEFAULT);
+            mChannel.setDescription("this is a test channel");
+            mChannel.enableLights(true);
+            mChannel.setLightColor(Color.RED);
+            mChannel.enableVibration(true);
+            mChannel.setShowBadge(true);
+            mChannel.setVibrationPattern(new long[]{100, 200, 300, 400, 500, 400, 300, 200, 400});
+            nm.createNotificationChannel(mChannel);
 
+        }
+    }
+
+    // Big notification type
     void BigNoti() {
-       // wait(5000);
+        // wait(5000);
         // Fetch the old notification here and add it go big_message variable as
         // big_message+="\n"+"***"+ fetched message".
         ToneGenerator toneG = new ToneGenerator(AudioManager.STREAM_ALARM, 100);
         toneG.startTone(ToneGenerator.TONE_CDMA_ALERT_CALL_GUARD, 400);
         big_message = "This is the big notification page and can be"+"\n"
-        +"easily called by altering a global variable value of big_message "+"\n"
-        +"Here it is used for initial Teacher notification such as the results in the last class "+"\n"+
-        "what we have studied in the last class"+"\n"+
-        "Is there any quiz scheduled or not";
+                +"easily called by altering a global variable value of big_message "+"\n"
+                +"Here it is used for initial Teacher notification such as the results in the last class "+"\n"+
+                "what we have studied in the last class"+"\n"+
+                "Is there any quiz scheduled or not";
 
 
         Log.i("main", "Big notification");
@@ -120,11 +145,11 @@ public class TeacherActivity extends Activity1 {
                         .extend(inlineActionForWear2)
                         .build();
         NotificationCompat.Builder notificationBuilder =
-                new NotificationCompat.Builder(this, "id")
+                new NotificationCompat.Builder(this, id)
                         .setSmallIcon(R.drawable.ic_launcher2)
                         .setContentTitle("VedinKaksha")
                         .setContentText("This notification contain big text please click to view on mobile........")
-                        .setChannelId("id")
+                        .setChannelId(id)
                         .addAction(bignotiaction);
         NotificationManagerCompat notificationManager =
                 NotificationManagerCompat.from(this);
@@ -133,17 +158,6 @@ public class TeacherActivity extends Activity1 {
 
     }
 
-    public static void wait(int ms)
-    {
-        try
-        {
-            Thread.sleep(ms);
-        }
-        catch(InterruptedException ex)
-        {
-            Thread.currentThread().interrupt();
-        }
-    }
 
     public void teacherclassroom(View view) {
 
@@ -186,4 +200,7 @@ public class TeacherActivity extends Activity1 {
         startActivity(new Intent(this, LoginActivity.class));
     }
 
+    public void teacherassignsubmit(View view) {
+        startActivity((new Intent(this, TeacherAssignment.class)));
+    }
 }
